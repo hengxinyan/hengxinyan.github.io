@@ -1,0 +1,1563 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="NSSCTF Crypto系列--格密码, hengxinyan&#39;blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>NSSCTF Crypto系列--格密码 | hengxinyan&#39;blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">hengxinyan&#39;blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">hengxinyan&#39;blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">NSSCTF Crypto系列--格密码</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-08-10
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Crypto系列–格密码"><a href="#Crypto系列–格密码" class="headerlink" title="Crypto系列–格密码"></a>Crypto系列–格密码</h1><h2 id="Crypto系列–格密码-一"><a href="#Crypto系列–格密码-一" class="headerlink" title="Crypto系列–格密码(一)"></a>Crypto系列–格密码(一)</h2><h3 id="格密码1-P1"><a href="#格密码1-P1" class="headerlink" title="[格密码1]P1"></a>[格密码1]P1</h3><ul>
+<li>加密：</li>
+</ul>
+<p>$h \equiv f^{-1}*g \pmod{p}$</p>
+<p>$c \equiv r*h + m \pmod{p}$</p>
+<p>$c \equiv r<em>g</em>f^{-1} + m \pmod{p}$</p>
+<ul>
+<li>解密：</li>
+</ul>
+<p>$f<em>c \equiv r</em>g + m*f \pmod{p}$</p>
+<p>$m<em>f \equiv (f</em>c \pmod{p}) \pmod{g}$</p>
+<p>$m \equiv (f*c \pmod{p})*f^{-1} \pmod{g}$</p>
+<blockquote>
+<p>造格子</p>
+</blockquote>
+<p>$$<br>\left[<br> \begin{matrix}<br> k &amp; f<br> \end{matrix}<br>\right]<br>*<br>\left[<br> \begin{matrix}<br> p &amp;  \<br> h &amp; 1<br> \end{matrix}<br>\right]<br>&#x3D;<br>\left[<br> \begin{matrix}<br> g &amp; f<br> \end{matrix}<br>\right]<br>$$</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> libnum <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+
+p <span class="token operator">=</span> <span class="token number">170990541130074930801165526479429022133700799973347532191727614846803741888876816210632483231997413973919037199883422312436314365293577997262903161076615619596783971730864586404602951191341733308807254112018161897113881363794353050758324742415299277578203838160939521046655099610387485947145087271531951477031</span>
+h <span class="token operator">=</span> <span class="token number">19027613518333504891337723135627869008620752060390603647368919831595397216728378486716291001290575802095059192000315493444659485043387076261350378464749849058547797538347059869865169867814094180939070464336693973680444770599657132264558273692580535803622882040948521678860110391309880528478220088107038861065</span>
+c <span class="token operator">=</span> <span class="token number">75639016590286995205676932417759002029770539425113355588948888258962338419567264292295302442895077764630601149285564849867773180066274580635377957966186472159256462169691456995594496690536094824570820527164224000505303071962872595619159691416247971024761571538057932032549611221598273371855762399417419551483</span>
+
+A <span class="token operator">=</span> p
+B <span class="token operator">=</span> h
+mat <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>A<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span>B<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+M <span class="token operator">=</span> Matrix<span class="token punctuation">(</span>ZZ<span class="token punctuation">,</span>mat<span class="token punctuation">)</span>
+hh <span class="token operator">=</span> M<span class="token punctuation">.</span>LLL<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># print(hh)</span>
+
+f <span class="token operator">=</span> hh<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+g <span class="token operator">=</span> hh<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+m <span class="token operator">=</span> f <span class="token operator">*</span> c <span class="token operator">%</span>p <span class="token operator">%</span>g <span class="token operator">*</span> inverse<span class="token punctuation">(</span>f<span class="token punctuation">,</span>g<span class="token punctuation">)</span> <span class="token operator">%</span>g
+flag <span class="token operator">=</span> n2s<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="格密码1-P2"><a href="#格密码1-P2" class="headerlink" title="[格密码1]P2"></a>[格密码1]P2</h3><p>背包加密：</p>
+<h4 id="脚本1"><a href="#脚本1" class="headerlink" title="脚本1"></a>脚本1</h4><blockquote>
+<p>下载一个包 lattice</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jvdsn/crypto-attacks">https://github.com/jvdsn/crypto-attacks</a></p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os
+<span class="token keyword">import</span> sys
+<span class="token keyword">from</span> math <span class="token keyword">import</span> ceil
+<span class="token keyword">from</span> math <span class="token keyword">import</span> log2
+<span class="token keyword">from</span> math <span class="token keyword">import</span> sqrt
+
+<span class="token keyword">from</span> sage<span class="token punctuation">.</span><span class="token builtin">all</span> <span class="token keyword">import</span> QQ
+<span class="token keyword">from</span> sage<span class="token punctuation">.</span><span class="token builtin">all</span> <span class="token keyword">import</span> matrix
+
+<span class="token comment"># path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(os.path.abspath(__file__)))))</span>
+<span class="token comment"># if sys.path[1] != path:</span>
+<span class="token comment">#     sys.path.insert(1, path)</span>
+
+<span class="token comment"># sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))</span>
+<span class="token keyword">from</span> lattice <span class="token keyword">import</span> <span class="token operator">*</span>
+
+
+<span class="token keyword">def</span> <span class="token function">attack</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Tries to find e_i values such that sum(e_i * a_i) = s.
+    This attack only works if the density of the a_i values is &lt; 0.9048.
+    More information: Coster M. J. et al., "Improved low-density subset sum algorithms"
+    :param a: the a_i values
+    :param s: the s value
+    :return: the e_i values, or None if the e_i values were not found
+    """</span>
+    n <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    d <span class="token operator">=</span> n <span class="token operator">/</span> log2<span class="token punctuation">(</span><span class="token builtin">max</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    N <span class="token operator">=</span> ceil<span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">*</span> sqrt<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">assert</span> d <span class="token operator">&lt;</span> <span class="token number">0.9408</span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f"Density should be less than 0.9408 but was </span><span class="token interpolation"><span class="token punctuation">&#123;</span>d<span class="token punctuation">&#125;</span></span><span class="token string">."</span></span>
+
+    L <span class="token operator">=</span> matrix<span class="token punctuation">(</span>QQ<span class="token punctuation">,</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        L<span class="token punctuation">[</span>i<span class="token punctuation">,</span> i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+        L<span class="token punctuation">[</span>i<span class="token punctuation">,</span> n<span class="token punctuation">]</span> <span class="token operator">=</span> N <span class="token operator">*</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+
+    L<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">*</span> n <span class="token operator">+</span> <span class="token punctuation">[</span>N <span class="token operator">*</span> s<span class="token punctuation">]</span>
+    <span class="token keyword">for</span> v <span class="token keyword">in</span> shortest_vectors<span class="token punctuation">(</span>L<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        s_ <span class="token operator">=</span> <span class="token number">0</span>
+        e <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            ei <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">-</span> <span class="token punctuation">(</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> ei <span class="token operator">!=</span> <span class="token number">0</span> <span class="token keyword">and</span> ei <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                <span class="token keyword">break</span>
+
+            ei <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>ei<span class="token punctuation">)</span>
+            s_ <span class="token operator">+=</span> ei <span class="token operator">*</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+            e<span class="token punctuation">.</span>append<span class="token punctuation">(</span>ei<span class="token punctuation">)</span>
+
+        <span class="token keyword">if</span> s_ <span class="token operator">==</span> s<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> e
+        
+b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
+c <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>attack<span class="token punctuation">(</span>b<span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># [1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+
+m <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+v <span class="token operator">=</span> <span class="token string">''</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> m<span class="token punctuation">:</span>
+    v <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+
+flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="脚本2"><a href="#脚本2" class="headerlink" title="脚本2"></a>脚本2</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+
+b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
+c <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+n <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+L <span class="token operator">=</span> Matrix<span class="token punctuation">(</span>ZZ<span class="token punctuation">,</span> n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    L<span class="token punctuation">[</span>i<span class="token punctuation">,</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+    L<span class="token punctuation">[</span>i<span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+L<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span>c
+
+res <span class="token operator">=</span> L<span class="token punctuation">.</span>LLL<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    M <span class="token operator">=</span> res<span class="token punctuation">.</span>row<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    flag <span class="token operator">=</span> <span class="token boolean">True</span>
+    <span class="token keyword">for</span> m <span class="token keyword">in</span> M<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> m <span class="token operator">!=</span> <span class="token number">0</span> <span class="token keyword">and</span> m <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            flag <span class="token operator">=</span> <span class="token boolean">False</span>
+            <span class="token keyword">break</span>
+    <span class="token keyword">if</span> flag<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> M<span class="token punctuation">)</span>
+
+<span class="token comment"># flag =  [1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1]</span>
+
+<span class="token comment"># flag = int(''.join(list(map(str, flag))), 2)</span>
+
+<span class="token comment"># print(long_to_bytes(flag))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="格密码1-P3"><a href="#格密码1-P3" class="headerlink" title="[格密码1]P3"></a>[格密码1]P3</h3><ul>
+<li>已知</li>
+</ul>
+<p>$r \ 14bits $</p>
+<p>$x \ &lt; 50$</p>
+<p>$x \equiv (p-r) * a + q \pmod{b}$</p>
+<p>$ \Rightarrow (p-r)<em>a + k</em>b &#x3D; x - q$</p>
+<blockquote>
+<p>造格子</p>
+</blockquote>
+<p>$$<br>\left[<br> \begin{matrix}<br> k &amp; p-r<br> \end{matrix}<br>\right]<br>*<br>\left[<br> \begin{matrix}<br> b &amp;  \<br> a &amp; 1<br> \end{matrix}<br>\right]<br>&#x3D;<br>\left[<br> \begin{matrix}<br> x-q &amp; p-r<br> \end{matrix}<br>\right]<br>$$</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> libnum <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> tqdm <span class="token keyword">import</span> <span class="token operator">*</span>
+
+c <span class="token operator">=</span> <span class="token number">78168998533427639204842155877581577797354503479929547596593341570371249960925614073689003464816147666662937166442652068942931518685068382940712171137636333670133426565340852055387100597883633466292241406019919037053324433086548680586265243208526469135810446004349904985765547633536396188822210185259239807712</span>
+a <span class="token operator">=</span> <span class="token number">134812492661960841508904741709490501744478747431860442812349873283670029478557996515894514952323891966807395438595833662645026902457124893765483848187664404810892289353889878515048084718565523356944401254704006179297186883488636493997227870769852726117603572452948662628907410024781493099700499334357552050587</span>
+b <span class="token operator">=</span> <span class="token number">1522865915656883867403482317171460381324798227298365523650851184567802496240011768078593938858595296724393891397782658816647243489780661999411811900439319821784266117539188498407648397194849631941074737391852399318951669593881907935220986282638388656503090963153968254244131928887025800088609341714974103921219202972691321661198135553928411002184780139571149772037283749086504201758438589417378336940732926352806256093865255824803202598635567105242590697162972609</span>
+e <span class="token operator">=</span> <span class="token number">65537</span>
+
+<span class="token comment"># ((p-r) * a + q) % b &lt; 50</span>
+
+mat <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>b<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span>a<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+M <span class="token operator">=</span> Matrix<span class="token punctuation">(</span>ZZ<span class="token punctuation">,</span>mat<span class="token punctuation">)</span>
+hh <span class="token operator">=</span> M<span class="token punctuation">.</span>LLL<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># print(hh)</span>
+
+p <span class="token operator">=</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>hh<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># p-r</span>
+q <span class="token operator">=</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>hh<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># q-x</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> tqdm<span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">**</span><span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">**</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        pp <span class="token operator">=</span> p <span class="token operator">+</span> i
+        qq <span class="token operator">=</span> q <span class="token operator">+</span> j
+        phi <span class="token operator">=</span> <span class="token punctuation">(</span>pp<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>qq<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> gcd<span class="token punctuation">(</span>phi<span class="token punctuation">,</span> <span class="token number">65537</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">continue</span>
+        d <span class="token operator">=</span> inverse<span class="token punctuation">(</span>e<span class="token punctuation">,</span>phi<span class="token punctuation">)</span>
+        n <span class="token operator">=</span> pp<span class="token operator">*</span>qq
+        m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
+        flag <span class="token operator">=</span> n2s<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token string">b'NSSCTF'</span> <span class="token keyword">in</span> flag <span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
+            <span class="token keyword">break</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="格密码1-P4"><a href="#格密码1-P4" class="headerlink" title="[格密码1]P4"></a>[格密码1]P4</h3><p>$$<br>a * r &#x3D; flag \pmod{p}<br>$$</p>
+<p>$$<br>k * p + a * r  &#x3D; flag<br>$$</p>
+<p>$$<br>\left[<br> \begin{matrix}<br> k &amp; r<br> \end{matrix}<br>\right]<br>*<br>\left[<br> \begin{matrix}<br> p &amp; 0 \<br> a &amp; 1<br> \end{matrix}<br>\right]<br>&#x3D;<br>\left[<br> \begin{matrix}<br> flag &amp; r<br> \end{matrix}<br>\right]<br>$$</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+
+a <span class="token operator">=</span> <span class="token number">79047880584807269054505204752966875903807058486141783766561521134845058071995038638934174701175782152417081883728635655442964823110171015637136681101856684888576194849310180873104729087883030291173114003115983405311162152717385429179852150760696213217464522070759438318396222163013306629318041233934326478247</span>
+p <span class="token operator">=</span> <span class="token number">90596199661954314748094754376367411728681431234103196427120607507149461190520498120433570647077910673128371876546100672985278698226714483847201363857703757534255187784953078548908192496602029047268538065300238964884068500561488409356401505220814317044301436585177722826939067622852763442884505234084274439591</span>
+
+<span class="token comment"># a * r = flag mod p</span>
+<span class="token comment"># r 175 bits </span>
+
+<span class="token comment"># k*p  + a* r  = flag </span>
+mat <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>p<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span>a<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span> 
+M <span class="token operator">=</span> Matrix<span class="token punctuation">(</span>ZZ<span class="token punctuation">,</span>mat<span class="token punctuation">)</span>
+hh <span class="token operator">=</span> M<span class="token punctuation">.</span>LLL<span class="token punctuation">(</span><span class="token punctuation">)</span>
+m <span class="token operator">=</span> hh<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="格密码1-P5"><a href="#格密码1-P5" class="headerlink" title="[格密码1]P5"></a>[格密码1]P5</h3><p>$$<br>a &#x3D; b*m + c \pmod{p}<br>$$</p>
+<p>$$<br>b,p \ 1024bits \<br>c \ 400bits   \<br>a 已知<br>$$</p>
+<p>$$<br>a &#x3D; b*m + c \pmod{p}<br>$$</p>
+<p>$$</p>
+<ul>
+<li>b*m + a &#x3D; c \pmod{p}<br>$$</li>
+</ul>
+<p>$$<br>\left[<br> \begin{matrix}<br> k &amp; m &amp; 1<br> \end{matrix}<br>\right]<br>*<br>\left[<br> \begin{matrix}<br> p &amp;  &amp;  \<br> -b &amp; 1 &amp;     \<br> a &amp; &amp; 2^{400}<br> \end{matrix}<br>\right]<br>&#x3D;<br>\left[<br> \begin{matrix}<br> c &amp; m &amp; k<br> \end{matrix}<br>\right]<br>$$</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> libnum <span class="token keyword">import</span> <span class="token operator">*</span>
+
+a <span class="token operator">=</span> <span class="token number">92716521851427599147343828266552451834533034815416003395170301819889384044273026852184291232938197215198124164263722270347104189412921224361134013717269051168246275213624264313794650441268405062046423740836145678559969020294978939553573428334198212792931759368218132978344815862506799287082760307048309578592</span>
+b <span class="token operator">=</span> <span class="token number">155530728639099361922541063573602659584927544589739208888076194504495146661257751801481540924821292656785953391450218803112838556107960071792826902126414012831375547340056667753587086997958522683688746248661290255381342148052513971774612583235459904652002495564523557637169529882928308821019659377248151898663</span>
+p <span class="token operator">=</span> <span class="token number">100910862834849216140965884888425432690937357792742349763319405418823395997406883138893618605587754336982681610768197845792843123785451070312818388494074168909379627989079148880913190854232917854414913847526564520719350308494462584771237445179797367179905414074344416047541423116739621805238556845903951985783</span>
+
+mat <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>p<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token operator">-</span>b<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span>a<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">400</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+M <span class="token operator">=</span> Matrix<span class="token punctuation">(</span>ZZ<span class="token punctuation">,</span>mat<span class="token punctuation">)</span>
+hh <span class="token operator">=</span> M<span class="token punctuation">.</span>LLL<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># print(hh)</span>
+
+m <span class="token operator">=</span> hh<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+flag <span class="token operator">=</span> n2s<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="格密码1-P6"><a href="#格密码1-P6" class="headerlink" title="[格密码1]P6"></a>[格密码1]P6</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.ijcsi.org/papers/IJCSI-9-2-1-311-314.pdf">https://www.ijcsi.org/papers/IJCSI-9-2-1-311-314.pdf</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.ijcsi.org/papers/IJCSI-9-2-1-311-314.pdf">论文</a></p>
+</blockquote>
+<p>$$<br>c_{0} &#x3D; m^{e_{0}} \pmod{n_{0}} \<br>c_{1} &#x3D; m^{e_{1}} \pmod{n_{1}} \<br>c_{2} &#x3D; m^{e_{2}} \pmod{n_{2}} \<br>c_{3} &#x3D; m^{e_{3}} \pmod{n_{3}}<br>$$</p>
+<blockquote>
+<p>分割</p>
+</blockquote>
+<p>$M &#x3D; \sqrt{n_{0}}$<br>$$<br>\left[<br> \begin{matrix}<br> M &amp; e_{0} &amp; e_{1} &amp; e_{2} &amp; e_{3} \<br> 0 &amp; -n_{0}&amp; 0 &amp; 0 &amp; 0 \<br> 0 &amp; 0 &amp; -n_{1} &amp; 0 &amp; 0 \<br> 0 &amp; 0 &amp; 0 &amp; -n_{2} &amp; 0 \<br> 0 &amp; 0 &amp; 0 &amp; 0 &amp; -n_{3}<br> \end{matrix}<br>\right]<br>$$<br>$hh &#x3D; L.LLL()$ </p>
+<p>$d &#x3D; hh &#x2F; M$</p>
+<blockquote>
+<p>完整代码</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> tqdm <span class="token keyword">import</span> tqdm
+<span class="token keyword">from</span> libnum <span class="token keyword">import</span> <span class="token operator">*</span>
+
+<span class="token comment"># https://www.ijcsi.org/papers/IJCSI-9-2-1-311-314.pdf</span>
+
+e0 <span class="token operator">=</span> <span class="token number">14663634286442041092028764808273515750847961898014201055608982250846018719684424125895815390624536073501623753618354026800118456911536861815261996929625814961086913500837475340797921236556312296934664701095834187857404704711288771338418177336783911864595983563560080719582434186801068157426993026446515265411</span>
+n0 <span class="token operator">=</span> <span class="token number">104543450623548393448505960506840545298706691237630183178416927557780858213264769135818447427794932329909731890957245926915280713988801182894888947956846369966245947852409172099018409057129584780443712258590591272371802134906914886744538889099861890573943377480028655951935894660286388060056770675084677768397</span>
+c0 <span class="token operator">=</span> <span class="token number">66400441793466385558399002350812383744096354576421495899465166492721568297592616443643465864544107914461044325088868615645524260480104397769130582397209585192620565774001015221725536884170662700337565613181799442382460047295553807602785067421981837709831158111951991854109179278733629950271657405211417740374</span>
+e1 <span class="token operator">=</span> <span class="token number">62005504700456859456675572895620453845623573672275890584145949847469951381521709553504593023003977393014834639251022203398533914340078480147377747715528821418445514563871411209895815634752533151145061594791024551625615960423026244560340983481137777162236719939420428613005457949228517914830194749293637917667</span>
+n1 <span class="token operator">=</span> <span class="token number">89410873947410184231222334229470195622685051370058935269198780539059522679122059486414591834635266301335656798768270022060656655274640699951736588085471509424575027153387518893978494158981314217195561629375189515702124478687925014362857206223379284909134299260355456357407022417434961226383007916607728238843</span>
+c1 <span class="token operator">=</span> <span class="token number">75133250536426006056029454024900058936095761927174304108454764308417889983571094946046507426319589437822458959089546795698076608690695326741772662156830944126301658579142020817338297043884836598263468494533324693019866746045910394812656639124276516075062088756043949581789436307373276242558429450971458945061</span>
+e2 <span class="token operator">=</span> <span class="token number">5365316217065391632204029784515519544882379449147835081003675696051077792179684123668298103660153980837519314114793091112163153158510344440829742753002176560016265852613076363394396640641504813912550948776926622696268531691467015580417575287779607009068332802842890478748171958455354463809356050553832863427</span>
+n2 <span class="token operator">=</span> <span class="token number">53325942266099921615667538877103327425435396909592382386684073177331528393295928518724880712900970020425481561110366696624090824641115147978830715508666547064446891727446073538022824237798568413003419382767587742032676311751819789672319289920011033523044026418650515529084031754775286163358926609712626506433</span>
+c2 <span class="token operator">=</span> <span class="token number">22289960513520782629306709529908652726794465066357062923684089176607114605563538085483920152508469429311012652149406853144200001391310165612163442404181970125704785325670969551080086517236489885046039799676581310781945432599048686184762485374030278657826206433571162451649808912276118945302558580745346371321</span>
+e3 <span class="token operator">=</span> <span class="token number">57257245945110486431680573908783487217316546039634811903637650579658516537372808464426294780698320301497615457264001148504941375058983426920721566040576604013497311914160175024860226623138659970105781812246471618831032554729317463745699993647224910498474869868186318188994237457335796911524629938029123055027</span>
+n3 <span class="token operator">=</span> <span class="token number">97233843381238063550322854422952777734101562842513647224354265328843953949189054347560960321126304504554067163501318212533606313039536188796999575130115659250566231010092273206623114900781284076452654791214088764465615154940874231056251107863895697778665275804663487113266180838319536762473697586368100928379</span>
+c3 <span class="token operator">=</span> <span class="token number">56606672064789484727896188434430896229911224588055894584797861263107870392831242138537980507537270618683458635389444257040355313948352917061971042629958646854593628522401074068536976581232979947149230764268377747754284783531803366391759725774562719884482404532619163798580872386794273190532863916038929461465</span>
+
+M <span class="token operator">=</span> isqrt<span class="token punctuation">(</span>n1<span class="token punctuation">)</span>
+mat <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>M<span class="token punctuation">,</span> e0<span class="token punctuation">,</span> e1<span class="token punctuation">,</span> e2<span class="token punctuation">,</span> e3<span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token operator">-</span>n0<span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span><span class="token operator">-</span>n1<span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span><span class="token operator">-</span>n2<span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span><span class="token operator">-</span>n3<span class="token punctuation">]</span><span class="token punctuation">]</span>
+
+L <span class="token operator">=</span> Matrix<span class="token punctuation">(</span>ZZ<span class="token punctuation">,</span>mat<span class="token punctuation">)</span>
+hh <span class="token operator">=</span> L<span class="token punctuation">.</span>LLL<span class="token punctuation">(</span><span class="token punctuation">)</span>
+d <span class="token operator">=</span> hh<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">//</span> M
+m <span class="token operator">=</span> power_mod<span class="token punctuation">(</span>c0<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n0<span class="token punctuation">)</span>
+flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="格密码1-P7"><a href="#格密码1-P7" class="headerlink" title="[格密码1]P7"></a>[格密码1]P7</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://ctf-wiki.org/crypto/asymmetric/rsa/d_attacks/rsa_extending_wiener/#_4">扩展维纳攻击</a></p>
+</blockquote>
+<p>用$W_1,G_{1,2},W_1*W_2$来构造格子</p>
+<h4 id="脚本1-1"><a href="#脚本1-1" class="headerlink" title="脚本1"></a>脚本1</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+n <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+c <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+e0 <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+e1 <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+a <span class="token operator">=</span> <span class="token number">5</span><span class="token operator">/</span><span class="token number">14</span>
+D <span class="token operator">=</span> diagonal_matrix<span class="token punctuation">(</span>ZZ<span class="token punctuation">,</span> <span class="token punctuation">[</span>n<span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span>n<span class="token operator">^</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span>n<span class="token operator">^</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">+</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+M <span class="token operator">=</span> Matrix<span class="token punctuation">(</span>ZZ<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span>n<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> n<span class="token operator">^</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> e0<span class="token punctuation">,</span> <span class="token operator">-</span>e0<span class="token punctuation">,</span> <span class="token operator">-</span>e0<span class="token operator">*</span>n<span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span> e1<span class="token punctuation">,</span>  <span class="token operator">-</span>e1<span class="token operator">*</span>n<span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  e0<span class="token operator">*</span>e1<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">*</span>D
+L <span class="token operator">=</span> M<span class="token punctuation">.</span>LLL<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t <span class="token operator">=</span> vector<span class="token punctuation">(</span>ZZ<span class="token punctuation">,</span> L<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+x <span class="token operator">=</span> t <span class="token operator">*</span> M<span class="token operator">^</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+x <span class="token operator">*</span> M <span class="token operator">=</span> t
+phi <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">/</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">*</span>e0<span class="token punctuation">)</span>
+
+d <span class="token operator">=</span> inverse_mod<span class="token punctuation">(</span><span class="token number">65537</span><span class="token punctuation">,</span> phi<span class="token punctuation">)</span>
+m <span class="token operator">=</span> power_mod<span class="token punctuation">(</span>c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="脚本2-1"><a href="#脚本2-1" class="headerlink" title="脚本2"></a>脚本2</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> tqdm <span class="token keyword">import</span> tqdm
+<span class="token keyword">from</span> libnum <span class="token keyword">import</span> <span class="token operator">*</span>
+
+n <span class="token operator">=</span> <span class="token number">110697784133988071803253124431092603234028687101567047811203431433689306543322837414808117411806181193598553341878079973980865551938790090419082150555675782822484149943421418447579383449269148197087985041351210982545320569973241390962326458234562044133505940521052500278777242988196544039226173227204865907343</span>
+c <span class="token operator">=</span> <span class="token number">3281096209929505523196793672137624804022934270452947405454462490250571524417033484978613243658208567511735641542935158434165363547355697159503378251318054879687577130170122911449101189974762808655638497967674004219512386442280269940950792767174561412932638740423542930763914255112354969122157915514816022159</span>
+e0 <span class="token operator">=</span> <span class="token number">28562806554366667733480283991307446762365777397933141571728113235368201162305126722188842319240464207580134816039095093401651171977877327756351539588974913736802534970867173212883308325913939353140276201705478124488858328502643345172188729914731042179091733244225184522680724392375975935305371163502863968963</span>
+e1 <span class="token operator">=</span> <span class="token number">28572469216883232254074869113744730984165641173439644880182528671699871929340616919028955398474678696802739685594548793470261306125219888911330937557582939811068530294470712859439149735950996866732508004061234613146407591546995439312326450834903885979660916965052092661398640105827442036234500556755520316031</span>
+
+a <span class="token operator">=</span> <span class="token number">5</span><span class="token operator">/</span><span class="token number">14</span>
+<span class="token comment"># D = diagonal_matrix(ZZ, [n, int(n^(1/2)), int(n^(1+a)), 1])</span>
+D <span class="token operator">=</span> diagonal_matrix<span class="token punctuation">(</span>ZZ<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span>n<span class="token operator">^</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">+</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span>n<span class="token operator">^</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> n<span class="token punctuation">]</span><span class="token punctuation">)</span>     <span class="token comment"># 对角线矩阵 用来平衡</span>
+mat <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span>e0<span class="token operator">*</span>e1<span class="token punctuation">,</span>   <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token operator">-</span>e1<span class="token operator">*</span>n<span class="token punctuation">,</span>  e1<span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token operator">-</span>e0<span class="token operator">*</span>n<span class="token punctuation">,</span> <span class="token operator">-</span>e0<span class="token punctuation">,</span> e0<span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span>  n<span class="token operator">^</span><span class="token number">2</span><span class="token punctuation">,</span>   <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span>n<span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span>
+M <span class="token operator">=</span> Matrix<span class="token punctuation">(</span>ZZ<span class="token punctuation">,</span>mat<span class="token punctuation">)</span>
+M <span class="token operator">=</span> M<span class="token operator">*</span>D
+hh <span class="token operator">=</span> M<span class="token punctuation">.</span>LLL<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+L <span class="token operator">=</span> vector<span class="token punctuation">(</span>ZZ<span class="token punctuation">,</span>hh<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+x <span class="token operator">=</span> L <span class="token operator">*</span> M<span class="token operator">^</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token comment"># print(x)</span>
+
+<span class="token comment"># x * M = L</span>
+phi <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">//</span>x<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">*</span>e0<span class="token punctuation">)</span>
+d <span class="token operator">=</span> inverse_mod<span class="token punctuation">(</span><span class="token number">65537</span><span class="token punctuation">,</span> phi<span class="token punctuation">)</span>
+m <span class="token operator">=</span> power_mod<span class="token punctuation">(</span>c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="格密码1-P8"><a href="#格密码1-P8" class="headerlink" title="[格密码1]P8"></a>[格密码1]P8</h3><p>$c \equiv a_0<em>s_0^{2}<em>s_1^{2} + a_1</em>s_0</em>s_2^{2} + a_2<em>s_1</em>s_2 \pmod{p}$</p>
+<p>$s_1<em>s_2 &#x3D; k</em>p + a_0*a_2^{-1}<em>s_0^{2}<em>s_1^{2}+a_1</em>a_2^{-1}<em>s_0</em>s_2^{2} - c</em>a_2^{-1}$</p>
+<blockquote>
+<p>造格子</p>
+</blockquote>
+<p>$$<br>\left[<br> \begin{matrix}<br> k &amp; s_0^{2}<em>s_1^{2} &amp; s_0</em>s_2^{2} &amp; 1<br> \end{matrix}<br>\right]<br>*<br>\left[<br> \begin{matrix}<br> p &amp; &amp; &amp;  \<br> a_0<em>a_2^{-1} &amp; 1 &amp; &amp; \<br> a_1</em>a_2^{-1} &amp; &amp; 1 &amp; \</p>
+<ul>
+<li>c*a_2 &amp; &amp; &amp; 1<br> \end{matrix}<h1 id="right"><a href="#right" class="headerlink" title="\right]"></a>\right]</h1>\left[<br> \begin{matrix}<br> s_1*s_2 &amp; s_0^{2}<em>s_1^{2} &amp; s_0</em>s_2^{2} &amp; 1<br> \end{matrix}<br>\right]<br>$$</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> libnum <span class="token keyword">import</span> <span class="token operator">*</span>
+c <span class="token operator">=</span> <span class="token number">740925064346371394698186587854547113606276228956443989781507592148712696471120454242180757282913190509143771235457885619359315384722931529795071829165028</span>
+flag <span class="token operator">=</span> <span class="token number">68803130911709451943985629442913968356735244797651554293510331427148284907075221530061581131130283569506280604032687824733336171953927</span>
+a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">8205051800134728054685810600921116779466017139080528864745521629232854690213051609775306424843961090482436503418278207286549634492623172279113808752825877</span><span class="token punctuation">,</span> <span class="token number">7656695314164580223033364292542508972053206838456547579023164583502640699225283686572923544677077467571265812610524520719197913305928971777756847148151453</span><span class="token punctuation">,</span> <span class="token number">12016313094941119621096276870216129960285946825332008187797823075795491053640261786033376211694851951499688886358239835607622191418940486434225440651886891</span><span class="token punctuation">]</span>
+p <span class="token operator">=</span> <span class="token number">9725369974716521164256395525866212215114818770667579116304398350357785690930260317036889742178436308598088096925530431498664796728861093872628194022265573</span>
+
+a2 <span class="token operator">=</span> invert<span class="token punctuation">(</span>a<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>p<span class="token punctuation">)</span>
+
+mat <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>p      <span class="token punctuation">,</span>       <span class="token number">0</span><span class="token punctuation">,</span>      <span class="token number">0</span><span class="token punctuation">,</span>      <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span>a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">*</span>a2<span class="token punctuation">,</span>       <span class="token number">1</span><span class="token punctuation">,</span>      <span class="token number">0</span><span class="token punctuation">,</span>      <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span>a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">*</span>a2<span class="token punctuation">,</span>       <span class="token number">0</span><span class="token punctuation">,</span>      <span class="token number">1</span><span class="token punctuation">,</span>      <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span><span class="token operator">-</span>c<span class="token operator">*</span>a2  <span class="token punctuation">,</span>       <span class="token number">0</span><span class="token punctuation">,</span>      <span class="token number">0</span><span class="token punctuation">,</span>      <span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span>
+
+M <span class="token operator">=</span> Matrix<span class="token punctuation">(</span>ZZ<span class="token punctuation">,</span>mat<span class="token punctuation">)</span>
+hh <span class="token operator">=</span> M<span class="token punctuation">.</span>LLL<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># print(hh)</span>
+
+s0s1 <span class="token operator">=</span> iroot<span class="token punctuation">(</span>hh<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s0s1<span class="token punctuation">)</span>   <span class="token comment">#  factordb</span>
+s0 <span class="token operator">=</span>  <span class="token number">3635120927</span>
+s1 <span class="token operator">=</span>  <span class="token number">2562131939</span>
+s2 <span class="token operator">=</span> iroot<span class="token punctuation">(</span>hh<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">//</span>s0<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+m <span class="token operator">=</span> flag <span class="token operator">//</span>s0<span class="token operator">//</span>s1<span class="token operator">//</span>s2
+<span class="token keyword">print</span><span class="token punctuation">(</span>n2s<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">hengxinyan</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://hengxinyan.github.io/2023/08/10/Crypto%E7%B3%BB%E5%88%97--%5B%E6%A0%BC%E5%AF%86%E7%A0%811%5D/">https://hengxinyan.github.io/2023/08/10/Crypto%E7%B3%BB%E5%88%97--%5B%E6%A0%BC%E5%AF%86%E7%A0%811%5D/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">hengxinyan</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/08/10/Crypto%E7%B3%BB%E5%88%97--RSA(%E4%B8%89)/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="NSSCTF Crypto系列--RSA(三)">
+                        
+                        <span class="card-title">NSSCTF Crypto系列--RSA(三)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-10
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            hengxinyan
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/08/10/%E5%B7%85%E5%B3%B0%E6%9E%81%E5%AE%A22023/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="巅峰极客2023">
+                        
+                        <span class="card-title">巅峰极客2023</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            hengxinyan
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">hengxinyan</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
