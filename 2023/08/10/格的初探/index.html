@@ -33,16 +33,6 @@
 
 
 
-   <style>
-    body{
-       background-image: url(https://w.wallhaven.cc/full/vg/wallhaven-vgw1yp.jpg);
-       background-repeat:no-repeat;
-       background-size:cover;
-       background-attachment:fixed;
-    }
-</style>
-
-
 
 <body>
     <header class="navbar-fixed">
@@ -538,14 +528,10 @@ flag <span class="token operator">=</span> libnum<span class="token punctuation"
 <blockquote>
 <p>复现博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41626232/article/details/129964038">无趣的浅</a></p>
 </blockquote>
-<figure>
-<img src="https://latex.csdn.net/eq?%5Cleft%5C%7B%5Cbegin%7Barray%7D%7Blll%7D%20A_1%5Ctimes%20x+B_1%3Dk_1%5C%20mod%20%5C%20p%5C%5C%20%5C%20%5C%20%5C%20%5C%20%5C%20%5C%20%5C%20%5Cvdots%5C%5C%20A_i%5Ctimes%20x+B_i%3Dk_i%5C%20mod%20%5C%20p%20%5Cend%7Barray%7D%5Cright." alt="" /><figcaption>Alt text</figcaption>
-</figure>
+<p><img src="https://latex.csdn.net/eq?%5Cleft%5C%7B%5Cbegin%7Barray%7D%7Blll%7D%20A_1%5Ctimes%20x+B_1%3Dk_1%5C%20mod%20%5C%20p%5C%5C%20%5C%20%5C%20%5C%20%5C%20%5C%20%5C%20%5C%20%5Cvdots%5C%5C%20A_i%5Ctimes%20x+B_i%3Dk_i%5C%20mod%20%5C%20p%20%5Cend%7Barray%7D%5Cright." /></p>
 <p>有这样的一些等式，然后A,B已知,k的bit位数要小于p的bit位数，等式数量足够的情况下，少6bit位数可以求解k</p>
 <p>具体构造如下矩阵</p>
-<figure>
-<img src="https://latex.csdn.net/eq?M%3D%5Cbegin%7Bpmatrix%7D%20p%20%26%20%26%20%26%20%26%5C%5C%20%26%20%5Cddots%20%26%20%26%20%26%5C%5C%20%26%20%26%20p%20%26%20%26%5C%5C%20A_1%20%26%5Ccdots%20%26A_i%20%26%20Z%26%5C%5C%20B_1%20%26%20%5Ccdots%20%26B_i%20%26%20%26%20K%20%5Cend%7Bpmatrix%7D" alt="" /><figcaption>Alt text</figcaption>
-</figure>
+<p><img src="https://latex.csdn.net/eq?M%3D%5Cbegin%7Bpmatrix%7D%20p%20%26%20%26%20%26%20%26%5C%5C%20%26%20%5Cddots%20%26%20%26%20%26%5C%5C%20%26%20%26%20p%20%26%20%26%5C%5C%20A_1%20%26%5Ccdots%20%26A_i%20%26%20Z%26%5C%5C%20B_1%20%26%20%5Ccdots%20%26B_i%20%26%20%26%20K%20%5Cend%7Bpmatrix%7D" /></p>
 <p>其中K为ki同bit位数的数（bit_length(ki)=250 K=2^250)</p>
 <p>Z为需要自己构造的数 <span class="math display">\[
 \begin {pmatrix}  
@@ -1419,22 +1405,6 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 
