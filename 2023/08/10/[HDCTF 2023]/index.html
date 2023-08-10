@@ -467,7 +467,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="HDCTF-2023"><a href="#HDCTF-2023" class="headerlink" title="[HDCTF 2023]"></a>[HDCTF 2023]</h1><h2 id="爬过小山去看云"><a href="#爬过小山去看云" class="headerlink" title="爬过小山去看云"></a>爬过小山去看云</h2><blockquote>
+                <h1 id="hdctf-2023">[HDCTF 2023]</h1>
+<h2 id="爬过小山去看云">爬过小山去看云</h2>
+<blockquote>
 <p>小山 Hill Cipher 希尔密码 发明者为<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Lester_S._Hill">Lester S. Hill</a></p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 希尔密码</span>
@@ -496,8 +498,8 @@ s <span class="token operator">=</span> <span class="token string">''</span>
         count <span class="token operator">+=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span>
     s <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span>count<span class="token operator">+</span><span class="token number">64</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="HDCTF-2023-Normal-Rsa"><a href="#HDCTF-2023-Normal-Rsa" class="headerlink" title="[HDCTF 2023]Normal_Rsa"></a>[HDCTF 2023]Normal_Rsa</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> <span class="token operator">*</span>
+<h2 id="hdctf-2023normal_rsa">[HDCTF 2023]Normal_Rsa</h2>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 
 n <span class="token operator">=</span> <span class="token number">4785613888465991171479248142015453309149548888755453367991501772592797686075465426815591528773123474962122102667475893532087343900904799831474817826058951265607078893487357878501280782935653048309499430170214015422492927323961394806106719569168457890040223027119115392961801582406287167644266319898276785787730947633037300317098453409851410936140488150390919951503767522517809035474567</span>
@@ -520,8 +522,8 @@ n <span class="token operator">=</span> p<span class="token operator">*</span>r
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
 flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="HDCTF-2023-Normal-Rsa-revenge"><a href="#HDCTF-2023-Normal-Rsa-revenge" class="headerlink" title="[HDCTF 2023]Normal_Rsa(revenge)"></a>[HDCTF 2023]Normal_Rsa(revenge)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> <span class="token operator">*</span>
+<h2 id="hdctf-2023normal_rsarevenge">[HDCTF 2023]Normal_Rsa(revenge)</h2>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 
 e <span class="token operator">=</span> <span class="token number">65537</span>
@@ -538,8 +540,8 @@ gcd <span class="token operator">=</span> gcd<span class="token punctuation">(</
 d <span class="token operator">=</span> inverse<span class="token punctuation">(</span>e<span class="token punctuation">,</span>phi<span class="token punctuation">)</span>
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="HDCTF-2023-Math-Rsa"><a href="#HDCTF-2023-Math-Rsa" class="headerlink" title="[HDCTF 2023]Math_Rsa"></a>[HDCTF 2023]Math_Rsa</h2><blockquote>
+<h2 id="hdctf-2023math_rsa">[HDCTF 2023]Math_Rsa</h2>
+<blockquote>
 <p>。。。</p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">
@@ -563,9 +565,6 @@ phi <span class="token operator">=</span> <span class="token punctuation">(</spa
 d <span class="token operator">=</span> inverse<span class="token punctuation">(</span>e<span class="token punctuation">,</span>phi<span class="token punctuation">)</span>
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 
                 
             </div>

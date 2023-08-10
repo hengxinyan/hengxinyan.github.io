@@ -467,22 +467,44 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Crypto系列–格密码"><a href="#Crypto系列–格密码" class="headerlink" title="Crypto系列–格密码"></a>Crypto系列–格密码</h1><h2 id="Crypto系列–格密码-一"><a href="#Crypto系列–格密码-一" class="headerlink" title="Crypto系列–格密码(一)"></a>Crypto系列–格密码(一)</h2><h3 id="格密码1-P1"><a href="#格密码1-P1" class="headerlink" title="[格密码1]P1"></a>[格密码1]P1</h3><ul>
+                <h1 id="crypto系列--格密码">Crypto系列--格密码</h1>
+<h2 id="crypto系列--格密码一">Crypto系列--格密码(一)</h2>
+<h3 id="格密码1p1">[格密码1]P1</h3>
+<ul>
 <li>加密：</li>
 </ul>
-<p>$h \equiv f^{-1}*g \pmod{p}$</p>
-<p>$c \equiv r*h + m \pmod{p}$</p>
-<p>$c \equiv r<em>g</em>f^{-1} + m \pmod{p}$</p>
+<p><span class="math inline">\(h \equiv f^{-1}*g \pmod{p}\)</span></p>
+<p><span class="math inline">\(c \equiv r*h + m \pmod{p}\)</span></p>
+<p><span class="math inline">\(c \equiv r*g*f^{-1} + m \pmod{p}\)</span></p>
 <ul>
 <li>解密：</li>
 </ul>
-<p>$f<em>c \equiv r</em>g + m*f \pmod{p}$</p>
-<p>$m<em>f \equiv (f</em>c \pmod{p}) \pmod{g}$</p>
-<p>$m \equiv (f*c \pmod{p})*f^{-1} \pmod{g}$</p>
+<p><span class="math inline">\(f*c \equiv r*g + m*f \pmod{p}\)</span></p>
+<p><span class="math inline">\(m*f \equiv (f*c \pmod{p}) \pmod{g}\)</span></p>
+<p><span class="math inline">\(m \equiv (f*c \pmod{p})*f^{-1} \pmod{g}\)</span></p>
 <blockquote>
 <p>造格子</p>
 </blockquote>
-<p>$$<br>\left[<br> \begin{matrix}<br> k &amp; f<br> \end{matrix}<br>\right]<br>*<br>\left[<br> \begin{matrix}<br> p &amp;  \<br> h &amp; 1<br> \end{matrix}<br>\right]<br>&#x3D;<br>\left[<br> \begin{matrix}<br> g &amp; f<br> \end{matrix}<br>\right]<br>$$</p>
+<p><span class="math display">\[
+\left[
+ \begin{matrix}
+ k &amp; f
+ \end{matrix}
+\right]
+*
+\left[
+ \begin{matrix}
+ p &amp;  \\
+ h &amp; 1
+ \end{matrix}
+\right]
+=
+\left[
+ \begin{matrix}
+ g &amp; f
+ \end{matrix}
+\right]
+\]</span></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> libnum <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 
@@ -503,11 +525,12 @@ g <span class="token operator">=</span> hh<span class="token punctuation">[</spa
 m <span class="token operator">=</span> f <span class="token operator">*</span> c <span class="token operator">%</span>p <span class="token operator">%</span>g <span class="token operator">*</span> inverse<span class="token punctuation">(</span>f<span class="token punctuation">,</span>g<span class="token punctuation">)</span> <span class="token operator">%</span>g
 flag <span class="token operator">=</span> n2s<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="格密码1-P2"><a href="#格密码1-P2" class="headerlink" title="[格密码1]P2"></a>[格密码1]P2</h3><p>背包加密：</p>
-<h4 id="脚本1"><a href="#脚本1" class="headerlink" title="脚本1"></a>脚本1</h4><blockquote>
+<h3 id="格密码1p2">[格密码1]P2</h3>
+<p>背包加密：</p>
+<h4 id="脚本1">脚本1</h4>
+<blockquote>
 <p>下载一个包 lattice</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/jvdsn/crypto-attacks">https://github.com/jvdsn/crypto-attacks</a></p>
+<p>https://github.com/jvdsn/crypto-attacks</p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os
 <span class="token keyword">import</span> sys
@@ -566,7 +589,6 @@ c <span class="token operator">=</span> <span class="token punctuation">.</span>
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>attack<span class="token punctuation">(</span>b<span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token comment"># [1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 
 m <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
@@ -577,8 +599,8 @@ v <span class="token operator">=</span> <span class="token string">''</span>
 
 flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="脚本2"><a href="#脚本2" class="headerlink" title="脚本2"></a>脚本2</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+<h4 id="脚本2">脚本2</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 
 b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
 c <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
@@ -609,20 +631,37 @@ res <span class="token operator">=</span> L<span class="token punctuation">.</sp
 <span class="token comment"># flag = int(''.join(list(map(str, flag))), 2)</span>
 
 <span class="token comment"># print(long_to_bytes(flag))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h3 id="格密码1-P3"><a href="#格密码1-P3" class="headerlink" title="[格密码1]P3"></a>[格密码1]P3</h3><ul>
+<h3 id="格密码1p3">[格密码1]P3</h3>
+<ul>
 <li>已知</li>
 </ul>
-<p>$r \ 14bits $</p>
-<p>$x \ &lt; 50$</p>
-<p>$x \equiv (p-r) * a + q \pmod{b}$</p>
-<p>$ \Rightarrow (p-r)<em>a + k</em>b &#x3D; x - q$</p>
+<p>$r  14bits $</p>
+<p><span class="math inline">\(x \ &lt; 50\)</span></p>
+<p><span class="math inline">\(x \equiv (p-r) * a + q \pmod{b}\)</span></p>
+<p>$ (p-r)<em>a + k</em>b = x - q$</p>
 <blockquote>
 <p>造格子</p>
 </blockquote>
-<p>$$<br>\left[<br> \begin{matrix}<br> k &amp; p-r<br> \end{matrix}<br>\right]<br>*<br>\left[<br> \begin{matrix}<br> b &amp;  \<br> a &amp; 1<br> \end{matrix}<br>\right]<br>&#x3D;<br>\left[<br> \begin{matrix}<br> x-q &amp; p-r<br> \end{matrix}<br>\right]<br>$$</p>
+<p><span class="math display">\[
+\left[
+ \begin{matrix}
+ k &amp; p-r
+ \end{matrix}
+\right]
+*
+\left[
+ \begin{matrix}
+ b &amp;  \\
+ a &amp; 1
+ \end{matrix}
+\right]
+=
+\left[
+ \begin{matrix}
+ x-q &amp; p-r
+ \end{matrix}
+\right]
+\]</span></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> libnum <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> tqdm <span class="token keyword">import</span> <span class="token operator">*</span>
@@ -656,12 +695,33 @@ q <span class="token operator">=</span> <span class="token builtin">abs</span><s
         <span class="token keyword">if</span> <span class="token string">b'NSSCTF'</span> <span class="token keyword">in</span> flag <span class="token punctuation">:</span>
             <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
             <span class="token keyword">break</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h3 id="格密码1-P4"><a href="#格密码1-P4" class="headerlink" title="[格密码1]P4"></a>[格密码1]P4</h3><p>$$<br>a * r &#x3D; flag \pmod{p}<br>$$</p>
-<p>$$<br>k * p + a * r  &#x3D; flag<br>$$</p>
-<p>$$<br>\left[<br> \begin{matrix}<br> k &amp; r<br> \end{matrix}<br>\right]<br>*<br>\left[<br> \begin{matrix}<br> p &amp; 0 \<br> a &amp; 1<br> \end{matrix}<br>\right]<br>&#x3D;<br>\left[<br> \begin{matrix}<br> flag &amp; r<br> \end{matrix}<br>\right]<br>$$</p>
+<h3 id="格密码1p4">[格密码1]P4</h3>
+<p><span class="math display">\[
+a * r = flag \pmod{p}
+\]</span></p>
+<p><span class="math display">\[
+k * p + a * r  = flag
+\]</span></p>
+<p><span class="math display">\[
+\left[
+ \begin{matrix}
+ k &amp; r
+ \end{matrix}
+\right]
+*
+\left[
+ \begin{matrix}
+ p &amp; 0 \\
+ a &amp; 1
+ \end{matrix}
+\right]
+= 
+\left[
+ \begin{matrix}
+ flag &amp; r
+ \end{matrix}
+\right]
+\]</span></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 
 a <span class="token operator">=</span> <span class="token number">79047880584807269054505204752966875903807058486141783766561521134845058071995038638934174701175782152417081883728635655442964823110171015637136681101856684888576194849310180873104729087883030291173114003115983405311162152717385429179852150760696213217464522070759438318396222163013306629318041233934326478247</span>
@@ -677,15 +737,42 @@ hh <span class="token operator">=</span> M<span class="token punctuation">.</spa
 m <span class="token operator">=</span> hh<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
 flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="格密码1-P5"><a href="#格密码1-P5" class="headerlink" title="[格密码1]P5"></a>[格密码1]P5</h3><p>$$<br>a &#x3D; b*m + c \pmod{p}<br>$$</p>
-<p>$$<br>b,p \ 1024bits \<br>c \ 400bits   \<br>a 已知<br>$$</p>
-<p>$$<br>a &#x3D; b*m + c \pmod{p}<br>$$</p>
-<p>$$</p>
-<ul>
-<li>b*m + a &#x3D; c \pmod{p}<br>$$</li>
-</ul>
-<p>$$<br>\left[<br> \begin{matrix}<br> k &amp; m &amp; 1<br> \end{matrix}<br>\right]<br>*<br>\left[<br> \begin{matrix}<br> p &amp;  &amp;  \<br> -b &amp; 1 &amp;     \<br> a &amp; &amp; 2^{400}<br> \end{matrix}<br>\right]<br>&#x3D;<br>\left[<br> \begin{matrix}<br> c &amp; m &amp; k<br> \end{matrix}<br>\right]<br>$$</p>
+<h3 id="格密码1p5">[格密码1]P5</h3>
+<p><span class="math display">\[
+a = b*m + c \pmod{p}
+\]</span></p>
+<p><span class="math display">\[
+b,p \ 1024bits \\
+c \ 400bits   \\
+a 已知
+\]</span></p>
+<p><span class="math display">\[
+a = b*m + c \pmod{p}
+\]</span></p>
+<p><span class="math display">\[
+- b*m + a = c \pmod{p}
+\]</span></p>
+<p><span class="math display">\[
+\left[
+ \begin{matrix}
+ k &amp; m &amp; 1
+ \end{matrix}
+\right]
+*
+\left[
+ \begin{matrix}
+ p &amp;  &amp;  \\
+ -b &amp; 1 &amp;     \\
+ a &amp; &amp; 2^{400}
+ \end{matrix}
+\right]
+= 
+\left[
+ \begin{matrix}
+ c &amp; m &amp; k
+ \end{matrix}
+\right]
+\]</span></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> libnum <span class="token keyword">import</span> <span class="token operator">*</span>
 
@@ -701,17 +788,32 @@ hh <span class="token operator">=</span> M<span class="token punctuation">.</spa
 m <span class="token operator">=</span> hh<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
 flag <span class="token operator">=</span> n2s<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="格密码1-P6"><a href="#格密码1-P6" class="headerlink" title="[格密码1]P6"></a>[格密码1]P6</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.ijcsi.org/papers/IJCSI-9-2-1-311-314.pdf">https://www.ijcsi.org/papers/IJCSI-9-2-1-311-314.pdf</a></p>
+<h3 id="格密码1p6">[格密码1]P6</h3>
+<blockquote>
+<p>https://www.ijcsi.org/papers/IJCSI-9-2-1-311-314.pdf</p>
 <p><a target="_blank" rel="noopener" href="https://www.ijcsi.org/papers/IJCSI-9-2-1-311-314.pdf">论文</a></p>
 </blockquote>
-<p>$$<br>c_{0} &#x3D; m^{e_{0}} \pmod{n_{0}} \<br>c_{1} &#x3D; m^{e_{1}} \pmod{n_{1}} \<br>c_{2} &#x3D; m^{e_{2}} \pmod{n_{2}} \<br>c_{3} &#x3D; m^{e_{3}} \pmod{n_{3}}<br>$$</p>
+<p><span class="math display">\[
+c_{0} = m^{e_{0}} \pmod{n_{0}} \\
+c_{1} = m^{e_{1}} \pmod{n_{1}} \\
+c_{2} = m^{e_{2}} \pmod{n_{2}} \\
+c_{3} = m^{e_{3}} \pmod{n_{3}}
+\]</span></p>
 <blockquote>
 <p>分割</p>
 </blockquote>
-<p>$M &#x3D; \sqrt{n_{0}}$<br>$$<br>\left[<br> \begin{matrix}<br> M &amp; e_{0} &amp; e_{1} &amp; e_{2} &amp; e_{3} \<br> 0 &amp; -n_{0}&amp; 0 &amp; 0 &amp; 0 \<br> 0 &amp; 0 &amp; -n_{1} &amp; 0 &amp; 0 \<br> 0 &amp; 0 &amp; 0 &amp; -n_{2} &amp; 0 \<br> 0 &amp; 0 &amp; 0 &amp; 0 &amp; -n_{3}<br> \end{matrix}<br>\right]<br>$$<br>$hh &#x3D; L.LLL()$ </p>
-<p>$d &#x3D; hh &#x2F; M$</p>
+<p><span class="math inline">\(M = \sqrt{n_{0}}\)</span> <span class="math display">\[
+\left[
+ \begin{matrix}
+ M &amp; e_{0} &amp; e_{1} &amp; e_{2} &amp; e_{3} \\
+ 0 &amp; -n_{0}&amp; 0 &amp; 0 &amp; 0 \\ 
+ 0 &amp; 0 &amp; -n_{1} &amp; 0 &amp; 0 \\
+ 0 &amp; 0 &amp; 0 &amp; -n_{2} &amp; 0 \\
+ 0 &amp; 0 &amp; 0 &amp; 0 &amp; -n_{3}
+ \end{matrix}
+\right]
+\]</span> <span class="math inline">\(hh = L.LLL()\)</span></p>
+<p><span class="math inline">\(d = hh / M\)</span></p>
 <blockquote>
 <p>完整代码</p>
 </blockquote>
@@ -747,12 +849,13 @@ d <span class="token operator">=</span> hh<span class="token punctuation">[</spa
 m <span class="token operator">=</span> power_mod<span class="token punctuation">(</span>c0<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n0<span class="token punctuation">)</span>
 flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="格密码1-P7"><a href="#格密码1-P7" class="headerlink" title="[格密码1]P7"></a>[格密码1]P7</h3><blockquote>
+<h3 id="格密码1p7">[格密码1]P7</h3>
+<blockquote>
 <p><a target="_blank" rel="noopener" href="https://ctf-wiki.org/crypto/asymmetric/rsa/d_attacks/rsa_extending_wiener/#_4">扩展维纳攻击</a></p>
 </blockquote>
-<p>用$W_1,G_{1,2},W_1*W_2$来构造格子</p>
-<h4 id="脚本1-1"><a href="#脚本1-1" class="headerlink" title="脚本1"></a>脚本1</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+<p>用<span class="math inline">\(W_1,G_{1,2},W_1*W_2\)</span>来构造格子</p>
+<h4 id="脚本1-1">脚本1</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 n <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 c <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 e0 <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
@@ -773,8 +876,8 @@ phi <span class="token operator">=</span> <span class="token builtin">int</span>
 d <span class="token operator">=</span> inverse_mod<span class="token punctuation">(</span><span class="token number">65537</span><span class="token punctuation">,</span> phi<span class="token punctuation">)</span>
 m <span class="token operator">=</span> power_mod<span class="token punctuation">(</span>c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="脚本2-1"><a href="#脚本2-1" class="headerlink" title="脚本2"></a>脚本2</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+<h4 id="脚本2-1">脚本2</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> tqdm <span class="token keyword">import</span> tqdm
 <span class="token keyword">from</span> libnum <span class="token keyword">import</span> <span class="token operator">*</span>
 
@@ -805,16 +908,34 @@ phi <span class="token operator">=</span> <span class="token builtin">int</span>
 d <span class="token operator">=</span> inverse_mod<span class="token punctuation">(</span><span class="token number">65537</span><span class="token punctuation">,</span> phi<span class="token punctuation">)</span>
 m <span class="token operator">=</span> power_mod<span class="token punctuation">(</span>c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="格密码1-P8"><a href="#格密码1-P8" class="headerlink" title="[格密码1]P8"></a>[格密码1]P8</h3><p>$c \equiv a_0<em>s_0^{2}<em>s_1^{2} + a_1</em>s_0</em>s_2^{2} + a_2<em>s_1</em>s_2 \pmod{p}$</p>
-<p>$s_1<em>s_2 &#x3D; k</em>p + a_0*a_2^{-1}<em>s_0^{2}<em>s_1^{2}+a_1</em>a_2^{-1}<em>s_0</em>s_2^{2} - c</em>a_2^{-1}$</p>
+<h3 id="格密码1p8">[格密码1]P8</h3>
+<p><span class="math inline">\(c \equiv a_0*s_0^{2}*s_1^{2} + a_1*s_0*s_2^{2} + a_2*s_1*s_2 \pmod{p}\)</span></p>
+<p><span class="math inline">\(s_1*s_2 = k*p + a_0*a_2^{-1}*s_0^{2}*s_1^{2}+a_1*a_2^{-1}*s_0*s_2^{2} - c*a_2^{-1}\)</span></p>
 <blockquote>
 <p>造格子</p>
 </blockquote>
-<p>$$<br>\left[<br> \begin{matrix}<br> k &amp; s_0^{2}<em>s_1^{2} &amp; s_0</em>s_2^{2} &amp; 1<br> \end{matrix}<br>\right]<br>*<br>\left[<br> \begin{matrix}<br> p &amp; &amp; &amp;  \<br> a_0<em>a_2^{-1} &amp; 1 &amp; &amp; \<br> a_1</em>a_2^{-1} &amp; &amp; 1 &amp; \</p>
-<ul>
-<li>c*a_2 &amp; &amp; &amp; 1<br> \end{matrix}<h1 id="right"><a href="#right" class="headerlink" title="\right]"></a>\right]</h1>\left[<br> \begin{matrix}<br> s_1*s_2 &amp; s_0^{2}<em>s_1^{2} &amp; s_0</em>s_2^{2} &amp; 1<br> \end{matrix}<br>\right]<br>$$</li>
-</ul>
+<p><span class="math display">\[
+\left[
+ \begin{matrix}
+ k &amp; s_0^{2}*s_1^{2} &amp; s_0*s_2^{2} &amp; 1
+ \end{matrix}
+\right]
+*
+\left[
+ \begin{matrix}
+ p &amp; &amp; &amp;  \\
+ a_0*a_2^{-1} &amp; 1 &amp; &amp; \\
+ a_1*a_2^{-1} &amp; &amp; 1 &amp; \\
+ - c*a_2 &amp; &amp; &amp; 1
+ \end{matrix}
+\right]
+= 
+\left[
+ \begin{matrix}
+ s_1*s_2 &amp; s_0^{2}*s_1^{2} &amp; s_0*s_2^{2} &amp; 1
+ \end{matrix}
+\right]
+\]</span></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> libnum <span class="token keyword">import</span> <span class="token operator">*</span>
 c <span class="token operator">=</span> <span class="token number">740925064346371394698186587854547113606276228956443989781507592148712696471120454242180757282913190509143771235457885619359315384722931529795071829165028</span>
@@ -842,7 +963,6 @@ s2 <span class="token operator">=</span> iroot<span class="token punctuation">(<
 
 m <span class="token operator">=</span> flag <span class="token operator">//</span>s0<span class="token operator">//</span>s1<span class="token operator">//</span>s2
 <span class="token keyword">print</span><span class="token punctuation">(</span>n2s<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>

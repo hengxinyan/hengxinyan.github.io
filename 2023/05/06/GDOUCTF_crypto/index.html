@@ -467,7 +467,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="Absolute-Baby-Encrytpion"><a href="#Absolute-Baby-Encrytpion" class="headerlink" title="Absolute_Baby_Encrytpion"></a>Absolute_Baby_Encrytpion</h3><blockquote>
+                <h3 id="absolute_baby_encrytpion">Absolute_Baby_Encrytpion</h3>
+<blockquote>
 <p>手敲的换表</p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">c <span class="token operator">=</span> <span class="token string">'+&#125;!q")hiim)#&#125;-nvm)i-$#mvn#0mnbm)im#n+&#125;!qnm8)i-$#mvnoc#0nz&lt;$9inm!>-n1:1-nm8)i-$~c58n!&#125;qhij#0[noic##m8nc8n?!8c&#125;w!n]>&amp;'</span>
@@ -485,8 +486,8 @@ m <span class="token operator">=</span> <span class="token string">''</span>
 <span class="token keyword">for</span> i <span class="token keyword">in</span> index<span class="token punctuation">:</span>
     m <span class="token operator">+=</span> h_<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="babylua"><a href="#babylua" class="headerlink" title="babylua"></a>babylua</h3><blockquote>
+<h3 id="babylua">babylua</h3>
+<blockquote>
 <p>两次MD5，爆破出来seed就好</p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> hashlib
@@ -523,8 +524,9 @@ m <span class="token operator">=</span> <span class="token string">''</span>
     ch <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>c1_<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
     m <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="math-problem">Math Problem</h3>
+<blockquote>
 
-<h3 id="Math-Problem"><a href="#Math-Problem" class="headerlink" title="Math Problem"></a>Math Problem</h3><blockquote>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sage<span class="token punctuation">.</span>all_cmdline <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes
@@ -553,8 +555,8 @@ d <span class="token operator">=</span> invert<span class="token punctuation">(<
 m <span class="token operator">=</span> powmod<span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
 flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="GDOUCTF-2023-Magic-of-Encoding"><a href="#GDOUCTF-2023-Magic-of-Encoding" class="headerlink" title="[GDOUCTF 2023]Magic of Encoding"></a>[GDOUCTF 2023]Magic of Encoding</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> base64 <span class="token keyword">import</span> <span class="token operator">*</span>
+<h2 id="gdouctf-2023magic-of-encoding">[GDOUCTF 2023]Magic of Encoding</h2>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> base64 <span class="token keyword">import</span> <span class="token operator">*</span>
 
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'c.txt'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     f <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -575,6 +577,7 @@ a<span class="token punctuation">.</span>append<span class="token punctuation">(
 
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'flag.zip'</span><span class="token punctuation">,</span><span class="token string">'wb'</span><span class="token punctuation">)</span><span class="token keyword">as</span> f<span class="token punctuation">:</span>
     f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>b64decode<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>

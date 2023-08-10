@@ -467,7 +467,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Crypto系列–RSA"><a href="#Crypto系列–RSA" class="headerlink" title="Crypto系列–RSA"></a>Crypto系列–RSA</h1><h2 id="Crypto系列–RSA-一"><a href="#Crypto系列–RSA-一" class="headerlink" title="Crypto系列–RSA(一)"></a>Crypto系列–RSA(一)</h2><h3 id="RSA1-P1"><a href="#RSA1-P1" class="headerlink" title="[RSA1]P1"></a>[RSA1]P1</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>inverse
+                <h1 id="crypto系列--rsa">Crypto系列--RSA</h1>
+<h2 id="crypto系列--rsa一">Crypto系列--RSA(一)</h2>
+<h3 id="rsa1p1">[RSA1]P1</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>inverse
 
 p <span class="token operator">=</span> <span class="token number">10554915510546378513140074459658086644656654144905337809416976066414771647836950941616441505897207397834928781511863699153349798682451297889979721668885951</span>
 q <span class="token operator">=</span> <span class="token number">8246403321715011123191410826902524505032643184038566851264109473851746507405534573077909160292816825514872584170252311902322051822644609979417178306809223</span>
@@ -483,8 +486,8 @@ c <span class="token operator">=</span> <span class="token number">4000588166951
 n <span class="token operator">=</span> p<span class="token operator">*</span>q
 flag <span class="token operator">=</span> solve<span class="token punctuation">(</span>p<span class="token punctuation">,</span>q<span class="token punctuation">,</span>e<span class="token punctuation">,</span>c<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA1-P2"><a href="#RSA1-P2" class="headerlink" title="[RSA1]P2"></a>[RSA1]P2</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>inverse
+<h3 id="rsa1p2">[RSA1]P2</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>inverse
 
 n <span class="token operator">=</span> <span class="token number">7382582015733895208810490097582153009797420348201515356767397357174775587237553842395468027650317457503579404097373070312978350435795210286224491315941881</span>
 e <span class="token operator">=</span> <span class="token number">65537</span>
@@ -500,8 +503,8 @@ q <span class="token operator">=</span> n<span class="token operator">//</span>p
 n <span class="token operator">=</span> p<span class="token operator">*</span>q
 flag <span class="token operator">=</span> solve<span class="token punctuation">(</span>p<span class="token punctuation">,</span>q<span class="token punctuation">,</span>e<span class="token punctuation">,</span>c<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA1-P3"><a href="#RSA1-P3" class="headerlink" title="[RSA1]P3"></a>[RSA1]P3</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>inverse
+<h3 id="rsa1p3">[RSA1]P3</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>inverse
 
 n <span class="token operator">=</span> <span class="token number">53690629441472827148854210396580805205350972614395425306316047967905824330731</span>
 e <span class="token operator">=</span> <span class="token number">65537</span>
@@ -517,8 +520,8 @@ q <span class="token operator">=</span> n<span class="token operator">//</span>p
 n <span class="token operator">=</span> p<span class="token operator">*</span>q
 flag <span class="token operator">=</span> solve<span class="token punctuation">(</span>p<span class="token punctuation">,</span>q<span class="token punctuation">,</span>e<span class="token punctuation">,</span>c<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA1-P4"><a href="#RSA1-P4" class="headerlink" title="[RSA1]P4"></a>[RSA1]P4</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot<span class="token punctuation">,</span>mpz<span class="token punctuation">,</span>gcd
+<h3 id="rsa1p4">[RSA1]P4</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot<span class="token punctuation">,</span>mpz<span class="token punctuation">,</span>gcd
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>isPrime<span class="token punctuation">,</span>inverse<span class="token punctuation">,</span>bytes_to_long
 <span class="token keyword">from</span> sympy <span class="token keyword">import</span> prevprime<span class="token punctuation">,</span>nextprime
 
@@ -538,8 +541,8 @@ p <span class="token operator">=</span> n<span class="token operator">//</span>q
 n <span class="token operator">=</span> p<span class="token operator">*</span>q
 flag <span class="token operator">=</span> solve<span class="token punctuation">(</span>p<span class="token punctuation">,</span>q<span class="token punctuation">,</span>e<span class="token punctuation">,</span>c<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA1-P5"><a href="#RSA1-P5" class="headerlink" title="[RSA1]P5"></a>[RSA1]P5</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot<span class="token punctuation">,</span>mpz<span class="token punctuation">,</span>gcd<span class="token punctuation">,</span>isqrt
+<h3 id="rsa1p5">[RSA1]P5</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot<span class="token punctuation">,</span>mpz<span class="token punctuation">,</span>gcd<span class="token punctuation">,</span>isqrt
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>isPrime<span class="token punctuation">,</span>inverse<span class="token punctuation">,</span>bytes_to_long
 <span class="token comment"># feima_attack 费马分解</span>
 
@@ -571,8 +574,8 @@ q <span class="token operator">=</span> a <span class="token operator">-</span> 
     <span class="token keyword">return</span> m<span class="token punctuation">,</span>flag
 flag <span class="token operator">=</span> solve<span class="token punctuation">(</span>p<span class="token punctuation">,</span>q<span class="token punctuation">,</span>e<span class="token punctuation">,</span>c<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA1-P6"><a href="#RSA1-P6" class="headerlink" title="[RSA1]P6"></a>[RSA1]P6</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot<span class="token punctuation">,</span>mpz<span class="token punctuation">,</span>gcd<span class="token punctuation">,</span>gcdext
+<h3 id="rsa1p6">[RSA1]P6</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot<span class="token punctuation">,</span>mpz<span class="token punctuation">,</span>gcd<span class="token punctuation">,</span>gcdext
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>isPrime<span class="token punctuation">,</span>inverse
 
 n1 <span class="token operator">=</span> <span class="token number">143348646254804947818644803938588739009782265465565896704788366218178523508874903492905378927641178487821742289009401873633609987818871281146199303052141439575438691652893995423962176259643151111739185844059243400387734688275416379337335777994990138009973618431459431410429980866760075387393812720247541406893</span>
@@ -592,8 +595,8 @@ q <span class="token operator">=</span> n1<span class="token operator">//</span>
 n <span class="token operator">=</span> p<span class="token operator">*</span>q
 flag <span class="token operator">=</span> solve<span class="token punctuation">(</span>p<span class="token punctuation">,</span>q<span class="token punctuation">,</span>e<span class="token punctuation">,</span>c1<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA1-P7"><a href="#RSA1-P7" class="headerlink" title="[RSA1]P7"></a>[RSA1]P7</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>isPrime<span class="token punctuation">,</span>inverse
+<h3 id="rsa1p7">[RSA1]P7</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>isPrime<span class="token punctuation">,</span>inverse
 <span class="token keyword">from</span> sympy <span class="token keyword">import</span> prevprime<span class="token punctuation">,</span>nextprime
 
 p <span class="token operator">=</span> <span class="token number">10666139331774428325755287635566473140804481321882464031499529816800186578792308674238646794969384836340484775213796013129603472328582005363876462361316357</span>
@@ -607,8 +610,8 @@ phi <span class="token operator">=</span> <span class="token punctuation">(</spa
 d <span class="token operator">=</span> inverse<span class="token punctuation">(</span>e<span class="token punctuation">,</span>phi<span class="token punctuation">)</span>
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA1-P8"><a href="#RSA1-P8" class="headerlink" title="[RSA1]P8"></a>[RSA1]P8</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>isPrime<span class="token punctuation">,</span>inverse
+<h3 id="rsa1p8">[RSA1]P8</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>isPrime<span class="token punctuation">,</span>inverse
 
 p <span class="token operator">=</span> <span class="token number">80505091208742938705306670241621545375764148093711243653439069254008824979403</span>
 q <span class="token operator">=</span> <span class="token number">67599990875658931406915486208971556223245451500927259766683936131876689508521</span>
@@ -620,8 +623,8 @@ phi <span class="token operator">=</span> p<span class="token operator">*</span>
 d <span class="token operator">=</span> inverse<span class="token punctuation">(</span>e<span class="token punctuation">,</span>phi<span class="token punctuation">)</span>
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA1-P9"><a href="#RSA1-P9" class="headerlink" title="[RSA1]P9"></a>[RSA1]P9</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>isPrime<span class="token punctuation">,</span>inverse
+<h3 id="rsa1p9">[RSA1]P9</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>isPrime<span class="token punctuation">,</span>inverse
 
 p <span class="token operator">=</span> <span class="token number">7478755670255767435237487693415479182290330775502792675052667363676831056436638619069277770540533350723045234676443621124912287506103439704868369839725279</span>
 q <span class="token operator">=</span> <span class="token number">9232828888049557325429111621080998490274442347556398052322580869768941301413255711626092627273543579067597113958627672298942570149816938335701615759283713</span>
@@ -641,8 +644,8 @@ n1 <span class="token operator">=</span> p <span class="token operator">*</span>
 n <span class="token operator">=</span> p<span class="token operator">*</span>q
 flag <span class="token operator">=</span> solve<span class="token punctuation">(</span>p<span class="token punctuation">,</span>q<span class="token punctuation">,</span>e<span class="token punctuation">,</span>c<span class="token punctuation">,</span>n1<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA1-P10"><a href="#RSA1-P10" class="headerlink" title="[RSA1]P10"></a>[RSA1]P10</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot<span class="token punctuation">,</span>mpz<span class="token punctuation">,</span>gcd<span class="token punctuation">,</span>gcdext
+<h3 id="rsa1p10">[RSA1]P10</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot<span class="token punctuation">,</span>mpz<span class="token punctuation">,</span>gcd<span class="token punctuation">,</span>gcdext
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>inverse
 
 p <span class="token operator">=</span> <span class="token number">9927950299160071928293508814174740578824022211226572614475267385787727188317224760986347883270504573953862618573051241506246884352854313099453586586022059</span>
@@ -656,8 +659,9 @@ d <span class="token operator">=</span> inverse<span class="token punctuation">(
 mm <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
 m <span class="token operator">=</span> iroot<span class="token punctuation">(</span>mm<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Crypto系列–RSA-二"><a href="#Crypto系列–RSA-二" class="headerlink" title="Crypto系列–RSA(二)"></a>Crypto系列–RSA(二)</h2><h3 id="RSA2-P1"><a href="#RSA2-P1" class="headerlink" title="[RSA2]P1"></a>[RSA2]P1</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot
+<h2 id="crypto系列--rsa二">Crypto系列--RSA(二)</h2>
+<h3 id="rsa2p1">[RSA2]P1</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes
 <span class="token comment"># 小指数</span>
 e <span class="token operator">=</span> <span class="token number">97</span>
@@ -665,8 +669,8 @@ c <span class="token operator">=</span> <span class="token number">7941854069142
 
 m <span class="token operator">=</span> iroot<span class="token punctuation">(</span>c<span class="token punctuation">,</span><span class="token number">97</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA2-P2"><a href="#RSA2-P2" class="headerlink" title="[RSA2]P2"></a>[RSA2]P2</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot
+<h3 id="rsa2p2">[RSA2]P2</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes
 <span class="token comment"># 小指数</span>
 n <span class="token operator">=</span> <span class="token number">111573371787314339229652810703380127177507745009618224416171957526984270337589283887959174610818933914845556276472159360153787395638087723501889651641965684241070152541291185349571453536221312112508437223801640552330390095266644485311958102687735113533739324296417077804219395793942670324182191309872918900717</span>
@@ -683,8 +687,8 @@ m <span class="token operator">=</span> <span class="token number">1</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span>
 flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA2-P3"><a href="#RSA2-P3" class="headerlink" title="[RSA2]P3"></a>[RSA2]P3</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot<span class="token punctuation">,</span>mpz<span class="token punctuation">,</span>gcd<span class="token punctuation">,</span>gcdext
+<h3 id="rsa2p3">[RSA2]P3</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot<span class="token punctuation">,</span>mpz<span class="token punctuation">,</span>gcd<span class="token punctuation">,</span>gcdext
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>inverse
 <span class="token comment"># rabin算法</span>
 
@@ -707,8 +711,8 @@ s_ <span class="token operator">=</span> n<span class="token operator">-</span>s
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>r_<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>s_<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA2-P4"><a href="#RSA2-P4" class="headerlink" title="[RSA2]P4"></a>[RSA2]P4</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes
+<h3 id="rsa2p4">[RSA2]P4</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes
 <span class="token keyword">from</span> xenny<span class="token punctuation">.</span>ctf<span class="token punctuation">.</span>crypto<span class="token punctuation">.</span>modern<span class="token punctuation">.</span>asymmetric<span class="token punctuation">.</span>rsa <span class="token keyword">import</span> wiener
 <span class="token comment"># e很大 wiener攻击</span>
 n <span class="token operator">=</span> <span class="token number">6969872410035233098344189258766624225446081814953480897731644163180991292913719910322241873463164232700368119465476508174863062276659958418657253738005689</span>
@@ -719,8 +723,8 @@ d<span class="token punctuation">,</span>p<span class="token punctuation">,</spa
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
 flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA2-P5"><a href="#RSA2-P5" class="headerlink" title="[RSA2]P5"></a>[RSA2]P5</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot
+<h3 id="rsa2p5">[RSA2]P5</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes
 <span class="token keyword">from</span> sympy<span class="token punctuation">.</span>ntheory<span class="token punctuation">.</span>modular <span class="token keyword">import</span> crt
 <span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
@@ -755,8 +759,8 @@ m_127 <span class="token operator">=</span> crt<span class="token punctuation">(
 m <span class="token operator">=</span> iroot<span class="token punctuation">(</span>m_127<span class="token punctuation">,</span>e<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
 flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA2-P6"><a href="#RSA2-P6" class="headerlink" title="[RSA2]P6"></a>[RSA2]P6</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> gcd<span class="token punctuation">,</span>powmod
+<h3 id="rsa2p6">[RSA2]P6</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> gcd<span class="token punctuation">,</span>powmod
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>inverse
 <span class="token comment"># p-1 光滑</span>
 
@@ -784,8 +788,8 @@ d <span class="token operator">=</span> inverse<span class="token punctuation">(
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>N<span class="token punctuation">)</span>
 flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA2-P7"><a href="#RSA2-P7" class="headerlink" title="[RSA2]P7"></a>[RSA2]P7</h3><blockquote>
+<h3 id="rsa2p7">[RSA2]P7</h3>
+<blockquote>
 <p>环境: ubuntu-22.04</p>
 <p>SageMath version 9.5</p>
 </blockquote>
@@ -805,8 +809,8 @@ d <span class="token operator">=</span> invert<span class="token punctuation">(<
 m <span class="token operator">=</span> powmod<span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
 flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA2-P8"><a href="#RSA2-P8" class="headerlink" title="[RSA2]P8"></a>[RSA2]P8</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> gcdext
+<h3 id="rsa2p8">[RSA2]P8</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> gcdext
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes
 <span class="token comment">#共模攻击</span>
 n <span class="token operator">=</span> <span class="token number">120294155186626082670474649118722298040433501930335450479777638508444129059776534554344361441717048531505985491664356283524886091709370969857047470362547600390987665105196367975719516115980157839088766927450099353377496192206005171597109864609567336679138620134544004766539483664270351472198486955623315909571</span>
@@ -820,8 +824,8 @@ g<span class="token punctuation">,</span>x<span class="token punctuation">,</spa
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c1<span class="token punctuation">,</span>x<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token operator">*</span><span class="token builtin">pow</span><span class="token punctuation">(</span>c2<span class="token punctuation">,</span>y<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token operator">%</span>n
 flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA2-P9"><a href="#RSA2-P9" class="headerlink" title="[RSA2]P9"></a>[RSA2]P9</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>inverse
+<h3 id="rsa2p9">[RSA2]P9</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>inverse
 <span class="token comment">#dp dq 泄露</span>
 p <span class="token operator">=</span> <span class="token number">13070310882303377463944295715444821218324151935347454554272870042925400761984585838979931730897626589859098834802923539617244712852188293321626061072925723</span>
 q <span class="token operator">=</span> <span class="token number">10411551818233737389114520103233235272671271111546186997024935593000298916988792710521511848414549553426943998093077337023514210631662189798921671306236009</span>
@@ -836,8 +840,8 @@ m2 <span class="token operator">=</span> <span class="token builtin">pow</span><
 m <span class="token operator">=</span> <span class="token punctuation">(</span> m1 <span class="token operator">+</span> <span class="token punctuation">(</span> <span class="token punctuation">(</span>m2 <span class="token operator">-</span> m1<span class="token punctuation">)</span> <span class="token operator">*</span> inverse<span class="token punctuation">(</span>p<span class="token punctuation">,</span>q<span class="token punctuation">)</span> <span class="token operator">%</span> q <span class="token punctuation">)</span><span class="token operator">*</span>p <span class="token punctuation">)</span> <span class="token operator">%</span>n
 flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA2-P10"><a href="#RSA2-P10" class="headerlink" title="[RSA2]P10"></a>[RSA2]P10</h3><blockquote>
+<h3 id="rsa2p10">[RSA2]P10</h3>
+<blockquote>
 <p><strong>环境: ubuntu-22.04</strong></p>
 <p><strong>SageMath version 9.5</strong></p>
 </blockquote>
@@ -851,8 +855,8 @@ dp <span class="token operator">=</span> <span class="token number">309833408925
 
 m <span class="token operator">=</span> dpleak<span class="token punctuation">.</span>attack<span class="token punctuation">(</span>dp<span class="token punctuation">,</span>c<span class="token punctuation">,</span>e<span class="token operator">=</span>e<span class="token punctuation">,</span>n<span class="token operator">=</span>n<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA2-P11"><a href="#RSA2-P11" class="headerlink" title="[RSA2]P11"></a>[RSA2]P11</h3><blockquote>
+<h3 id="rsa2p11">[RSA2]P11</h3>
+<blockquote>
 <p><strong>环境: ubuntu-22.04</strong></p>
 <p><strong>SageMath version 9.5</strong></p>
 </blockquote>
@@ -868,30 +872,29 @@ dp <span class="token operator">=</span> <span class="token number">265663150662
 m <span class="token operator">=</span> dpleak<span class="token punctuation">.</span>attack<span class="token punctuation">(</span>dp<span class="token punctuation">,</span>c<span class="token punctuation">,</span>e<span class="token operator">=</span>e<span class="token punctuation">,</span>n<span class="token operator">=</span>n<span class="token punctuation">)</span>
 flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span> m <span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="RSA2-P12"><a href="#RSA2-P12" class="headerlink" title="[RSA2]P12"></a>[RSA2]P12</h3><h4 id="d泄露求p"><a href="#d泄露求p" class="headerlink" title="d泄露求p"></a>d泄露求p</h4><ol>
-<li><p>首先Xenny师傅介绍一个定理<br> $r \equiv s\pmod{\phi(n)}$  $\Leftrightarrow$  $a^{r} \equiv a^{s} \pmod{n}$  </p>
-</li>
-<li><p>$e<em>d \equiv 1\pmod{\phi(n)}$ $\Rightarrow$ $a^{e</em>d} \equiv a \pmod{n}$</p>
-</li>
-<li><p>我们令$e*d -1 &#x3D; 2^{s}*t$</p>
-</li>
+<h3 id="rsa2p12">[RSA2]P12</h3>
+<h4 id="d泄露求p">d泄露求p</h4>
+<ol type="1">
+<li><p>首先Xenny师傅介绍一个定理<br />
+<span class="math inline">\(r \equiv s\pmod{\phi(n)}\)</span> <span class="math inline">\(\Leftrightarrow\)</span> <span class="math inline">\(a^{r} \equiv a^{s} \pmod{n}\)</span></p></li>
+<li><p><span class="math inline">\(e*d \equiv 1\pmod{\phi(n)}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(a^{e*d} \equiv a \pmod{n}\)</span></p></li>
+<li><p>我们令<span class="math inline">\(e*d -1 = 2^{s}*t\)</span></p></li>
 </ol>
-<p>使得 $t$ 是一个奇数，这样我们遍历 $[\ 1,\ s]$ ，假设能够找到满足下列关系式的式子</p>
-<p>$a^{2 ^ {i} * t}\equiv 1 \pmod{n}$ 且 $a^{2 ^ {i - 1 } * t}\not \equiv \pm{1} \pmod{n}$</p>
-<p>就会有 $gcd(a^{2 ^ {i-1} * t} - 1,n) &#x3D; p$</p>
-<ol start="4">
+<p>使得 <span class="math inline">\(t\)</span> 是一个奇数，这样我们遍历 <span class="math inline">\([\ 1,\ s]\)</span> ，假设能够找到满足下列关系式的式子</p>
+<p><span class="math inline">\(a^{2 ^ {i} * t}\equiv 1 \pmod{n}\)</span> 且 <span class="math inline">\(a^{2 ^ {i - 1 } * t}\not \equiv \pm{1} \pmod{n}\)</span></p>
+<p>就会有 <span class="math inline">\(gcd(a^{2 ^ {i-1} * t} - 1,n) = p\)</span></p>
+<ol start="4" type="1">
 <li>证明如下</li>
 </ol>
-<p> $a^{2 ^ {i  } * t} \equiv 1 \pmod{n}$</p>
-<p> $\Rightarrow$ $2 ^ {i }* t\equiv 0 \pmod{\phi(n)}$</p>
-<p> $\Rightarrow$ $2 ^ {i - 1}* t &#x3D; 2^{-1} * k <em>(p-1)</em>(q-1) &#x3D; k*(p-1)*\frac{(q-1)}{2}$         </p>
-<p> $\Rightarrow$ $2 ^ {i - 1 }* t\equiv 0 \ (mod \ p-1 )$</p>
-<p> $\Rightarrow$  $a^{2 ^ {i-1 }* t}\equiv 1 \pmod{p}$              </p>
-<p> $\Rightarrow$ $a^{2 ^ {i-1 } * t} - 1\ \equiv 0 \pmod{p}$</p>
-<p> $\Rightarrow$ $a^{2 ^ {i-1 } * t} - 1\ &#x3D; k*p$</p>
-<p>那么有 $gcd(k*p,n) &#x3D; p$</p>
-<p>也就是 $gcd(a^{2 ^ {i-1} * t} - 1,n) &#x3D; p$</p>
+<p><span class="math inline">\(a^{2 ^ {i } * t} \equiv 1 \pmod{n}\)</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(2 ^ {i }* t\equiv 0 \pmod{\phi(n)}\)</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(2 ^ {i - 1}* t = 2^{-1} * k *(p-1)*(q-1) = k*(p-1)*\frac{(q-1)}{2}\)</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(2 ^ {i - 1 }* t\equiv 0 \ (mod \ p-1 )\)</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(a^{2 ^ {i-1 }* t}\equiv 1 \pmod{p}\)</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(a^{2 ^ {i-1 } * t} - 1\ \equiv 0 \pmod{p}\)</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(a^{2 ^ {i-1 } * t} - 1\ = k*p\)</span></p>
+<p>那么有 <span class="math inline">\(gcd(k*p,n) = p\)</span></p>
+<p>也就是 <span class="math inline">\(gcd(a^{2 ^ {i-1} * t} - 1,n) = p\)</span></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> hashlib <span class="token keyword">import</span> md5
 <span class="token comment">#d泄露 分解n</span>
@@ -923,7 +926,6 @@ q <span class="token operator">=</span> n <span class="token operator">//</span>
 
 flag <span class="token operator">=</span> md5<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"NSSCTF&#123;"</span><span class="token operator">+</span>flag<span class="token operator">+</span><span class="token string">"&#125;"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>

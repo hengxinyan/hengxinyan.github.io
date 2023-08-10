@@ -467,17 +467,22 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="HNP问题"><a href="#HNP问题" class="headerlink" title="HNP问题"></a>HNP问题</h1><h2 id="格的初探"><a href="#格的初探" class="headerlink" title="格的初探"></a>格的初探</h2><blockquote>
+                <h1 id="hnp问题">HNP问题</h1>
+<h2 id="格的初探">格的初探</h2>
+<blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.anquanke.com/post/id/204846#h2-0">安全客</a></p>
 </blockquote>
-<h3 id="RSA3-P4"><a href="#RSA3-P4" class="headerlink" title="[RSA3]P4"></a>[RSA3]P4</h3><blockquote>
+<h3 id="rsa3p4">[RSA3]P4</h3>
+<blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.shuzhiduo.com/A/gGdXKP6W54/">矩阵markdown</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.ruanx.net/lattice-3/">发现一个格密码Blog</a></p>
 <p><a target="_blank" rel="noopener" href="https://lazzzaro.github.io/2020/11/07/crypto-%E6%A0%BC%E5%AF%86%E7%A0%81/index.html">还有一个格密码</a></p>
 <p>第一次接触格，解RSA</p>
 </blockquote>
-<p>$a &#x3D; r^{-1}*m \pmod{p}$</p>
-<p>$\Rightarrow a<em>r &#x3D; m + k</em>p$<br>$$<br>\left[ \begin{matrix} r &amp; k \end{matrix} \right] \left[ \begin{matrix} 1 &amp; a \ 0 &amp; p \end{matrix} \right] &#x3D; \left[ \begin{matrix} r &amp; m \end{matrix} \right]<br>$$</p>
+<p><span class="math inline">\(a = r^{-1}*m \pmod{p}\)</span></p>
+<p><span class="math inline">\(\Rightarrow a*r = m + k*p\)</span> <span class="math display">\[
+\left[ \begin{matrix} r &amp; k \end{matrix} \right] \left[ \begin{matrix} 1 &amp; a \\ 0 &amp; p \end{matrix} \right] = \left[ \begin{matrix} r &amp; m \end{matrix} \right]
+\]</span></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> <span class="token operator">*</span>
 
@@ -491,12 +496,23 @@ r<span class="token punctuation">,</span>m <span class="token operator">=</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span>m<span class="token punctuation">)</span>
 flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span><span class="token builtin">abs</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>自己构造一个格</p>
 </blockquote>
-<p>$a &#x3D; r^{-1}*m \pmod{p}$</p>
-<p>$\Rightarrow a<em>r &#x3D; m + k</em>p$<br>$\Rightarrow r<em>a - k</em>p &#x3D; m$<br>$$<br>\left[ \begin{matrix}<br>r &amp; k<br>\end{matrix} \right] *<br>\left[ \begin{matrix}<br>a &amp; 1 \<br>-p &amp; 0<br>\end{matrix} \right]<br>&#x3D;<br>\left[ \begin{matrix}<br>m &amp; r<br>\end{matrix} \right]<br>$$</p>
+<p><span class="math inline">\(a = r^{-1}*m \pmod{p}\)</span></p>
+<p><span class="math inline">\(\Rightarrow a*r = m + k*p\)</span> <span class="math inline">\(\Rightarrow r*a - k*p = m\)</span> <span class="math display">\[
+\left[ \begin{matrix}
+r &amp; k 
+\end{matrix} \right] *
+\left[ \begin{matrix}
+a &amp; 1 \\
+-p &amp; 0
+\end{matrix} \right]
+= 
+\left[ \begin{matrix}
+m &amp; r 
+\end{matrix} \right]
+\]</span></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> libnum
 a <span class="token operator">=</span> <span class="token number">79047880584807269054505204752966875903807058486141783766561521134845058071995038638934174701175782152417081883728635655442964823110171015637136681101856684888576194849310180873104729087883030291173114003115983405311162152717385429179852150760696213217464522070759438318396222163013306629318041233934326478247</span>
 p <span class="token operator">=</span> <span class="token number">90596199661954314748094754376367411728681431234103196427120607507149461190520498120433570647077910673128371876546100672985278698226714483847201363857703757534255187784953078548908192496602029047268538065300238964884068500561488409356401505220814317044301436585177722826939067622852763442884505234084274439591</span>
@@ -508,19 +524,31 @@ h <span class="token operator">=</span> M<span class="token punctuation">.</span
 flag <span class="token operator">=</span> libnum<span class="token punctuation">.</span>n2s<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>h<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
 <span class="token comment"># b'NSSCTF&#123;e572546b-abb5-4358-8970-471abc12b7ef&#125;'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="开始格"><a href="#开始格" class="headerlink" title="开始格"></a>开始格</h2><blockquote>
+<h2 id="开始格">开始格</h2>
+<blockquote>
 <p>复现博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41626232/article/details/129964038">无趣的浅</a></p>
 </blockquote>
-<p><img src="https://latex.csdn.net/eq?%5Cleft%5C%7B%5Cbegin%7Barray%7D%7Blll%7D%20A_1%5Ctimes%20x&plus;B_1=k_1%5C%20mod%20%5C%20p%5C%5C%20%5C%20%5C%20%5C%20%5C%20%5C%20%5C%20%5C%20%5Cvdots%5C%5C%20A_i%5Ctimes%20x&plus;B_i=k_i%5C%20mod%20%5C%20p%20%5Cend%7Barray%7D%5Cright." alt="Alt text"></p>
+<figure>
+<img src="https://latex.csdn.net/eq?%5Cleft%5C%7B%5Cbegin%7Barray%7D%7Blll%7D%20A_1%5Ctimes%20x+B_1%3Dk_1%5C%20mod%20%5C%20p%5C%5C%20%5C%20%5C%20%5C%20%5C%20%5C%20%5C%20%5C%20%5Cvdots%5C%5C%20A_i%5Ctimes%20x+B_i%3Dk_i%5C%20mod%20%5C%20p%20%5Cend%7Barray%7D%5Cright." alt="" /><figcaption>Alt text</figcaption>
+</figure>
 <p>有这样的一些等式，然后A,B已知,k的bit位数要小于p的bit位数，等式数量足够的情况下，少6bit位数可以求解k</p>
 <p>具体构造如下矩阵</p>
-<p><img src="https://latex.csdn.net/eq?M=%5Cbegin%7Bpmatrix%7D%20p%20&%20&%20&%20&%5C%5C%20&%20%5Cddots%20&%20&%20&%5C%5C%20&%20&%20p%20&%20&%5C%5C%20A_1%20&%5Ccdots%20&A_i%20&%20Z&%5C%5C%20B_1%20&%20%5Ccdots%20&B_i%20&%20&%20K%20%5Cend%7Bpmatrix%7D" alt="Alt text"></p>
-<p>其中K为ki同bit位数的数（bit_length(ki)&#x3D;250  K&#x3D;2^250)</p>
-<p>Z为需要自己构造的数<br>$$<br>\begin {pmatrix}<br> l_1 &amp; \cdots &amp; l_i &amp; x &amp;1<br> \end{pmatrix}<br> \times<br> M &#x3D;<br> \begin{pmatrix}<br> k_1 &amp; \cdots &amp; k_i &amp; Z<em>x&amp;K<br> \end{pmatrix}<br>$$<br>要尽可能的满足Z</em>x的bit位数与K一致</p>
-<h2 id="MTCTF2022-strange-rsa3"><a href="#MTCTF2022-strange-rsa3" class="headerlink" title="MTCTF2022 strange_rsa3"></a>MTCTF2022 strange_rsa3</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+<figure>
+<img src="https://latex.csdn.net/eq?M%3D%5Cbegin%7Bpmatrix%7D%20p%20%26%20%26%20%26%20%26%5C%5C%20%26%20%5Cddots%20%26%20%26%20%26%5C%5C%20%26%20%26%20p%20%26%20%26%5C%5C%20A_1%20%26%5Ccdots%20%26A_i%20%26%20Z%26%5C%5C%20B_1%20%26%20%5Ccdots%20%26B_i%20%26%20%26%20K%20%5Cend%7Bpmatrix%7D" alt="" /><figcaption>Alt text</figcaption>
+</figure>
+<p>其中K为ki同bit位数的数（bit_length(ki)=250 K=2^250)</p>
+<p>Z为需要自己构造的数 <span class="math display">\[
+\begin {pmatrix}  
+ l_1 &amp; \cdots &amp; l_i &amp; x &amp;1 
+ \end{pmatrix}
+ \times 
+ M = 
+ \begin{pmatrix} 
+ k_1 &amp; \cdots &amp; k_i &amp; Z*x&amp;K 
+ \end{pmatrix}
+\]</span> 要尽可能的满足Z*x的bit位数与K一致</p>
+<h2 id="mtctf2022-strange_rsa3">MTCTF2022 strange_rsa3</h2>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> secret <span class="token keyword">import</span> flag3
  
  
@@ -550,13 +578,16 @@ n <span class="token operator">=</span> <span class="token punctuation">[</span>
 c <span class="token operator">=</span> <span class="token number">24426016715355498456650532748209528249200902516644306644652290745346403378221744208791754411669322694597831272399935610924080672864361088045894354412944203199767471898920740773322967470374385635042086816010876203117884874681450622109443867183037282062248951073356702181165103759051513426785435705002047708435055880616309144483691648077981524802908185706596363674820857151388761087408514551645305031742705266691826719380663571699663832536944531865183586885154128228789310222929701360939023228059118720311899056620389378996862413971733056546988166759451010742768802840638380019172710929867945108511664271273569394689619</span>
 gift <span class="token operator">=</span> <span class="token number">173299379625576798749821685155193435290573235640007530711924098468561852299646118206367598564087551037396665586630782838190274697684611102346492601699992667822233634078800006099513099432664305226448819277556828816420517850404262393535832488384876680039695417291460237594174659357055221582914415278609167623124281569332881993050546046852564902573985929794261636296569394448935231131668411811662581097119330330246497311885207256858435515769776396794250803110128999</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>题目：</p>
-<p><img src="https://latex.csdn.net/eq?%5Cnoindent%20%5C%5C%20p0%5C%20p1%20%5C%20%5C%20512bits%5C%5C%20q%20%5C%20%5C%202048bits%20%5C%5C%20a%20%5C%20b%20%5C%20%5C%20512bits%5C%5C%20r0%20%5C%20r1%20%5C%20%5C%201024bits%5C%5C%20n0=p0%5Ctimes%20q%20&plus;%20r0%5C%5C%20n1=p1%5Ctimes%20q%20&plus;%20r1%5C%5C%20gift%5Ctimes%20b%20=a%5Ctimes%20p0%20-%20p1%20%5C%20mod%20%5C%20p0*p1%5E2" alt="Alt text"></p>
+<figure>
+<img src="https://latex.csdn.net/eq?%5Cnoindent%20%5C%5C%20p0%5C%20p1%20%5C%20%5C%20512bits%5C%5C%20q%20%5C%20%5C%202048bits%20%5C%5C%20a%20%5C%20b%20%5C%20%5C%20512bits%5C%5C%20r0%20%5C%20r1%20%5C%20%5C%201024bits%5C%5C%20n0%3Dp0%5Ctimes%20q%20+%20r0%5C%5C%20n1%3Dp1%5Ctimes%20q%20+%20r1%5C%5C%20gift%5Ctimes%20b%20%3Da%5Ctimes%20p0%20-%20p1%20%5C%20mod%20%5C%20p0*p1%5E2" alt="" /><figcaption>Alt text</figcaption>
+</figure>
 <blockquote>
 <p>先求p0，p1</p>
 </blockquote>
-<p><img src="https://latex.csdn.net/eq?%5Cfrac%7Bn0%7D%7Bn1%7D=%5Cfrac%7Bp0*q&plus;r0%7D%7Bp1*q&plus;r1%7D=%5Cfrac%7Bp0&plus;%5Cfrac%7Br0%7D%7Bq%7D%7D%7Bp1&plus;%5Cfrac%7Br1%7D%7Bq%7D%7D%5Capprox%20%5Cfrac%7Bp0%7D%7Bp1%7D" alt="Alt text"></p>
+<figure>
+<img src="https://latex.csdn.net/eq?%5Cfrac%7Bn0%7D%7Bn1%7D%3D%5Cfrac%7Bp0*q+r0%7D%7Bp1*q+r1%7D%3D%5Cfrac%7Bp0+%5Cfrac%7Br0%7D%7Bq%7D%7D%7Bp1+%5Cfrac%7Br1%7D%7Bq%7D%7D%5Capprox%20%5Cfrac%7Bp0%7D%7Bp1%7D" alt="" /><figcaption>Alt text</figcaption>
+</figure>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 上面的公式是连分数 跟代码没关系</span>
 <span class="token comment"># 因为我的连分数没有解出来p0，p1</span>
 mat <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">1024</span><span class="token punctuation">,</span>n<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token operator">-</span>n<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span>      <span class="token comment"># p0*n[1] - p1*n[0] = p0*r1 - p1*r0 </span>
@@ -564,17 +595,36 @@ mat <span class="token operator">=</span> Matrix<span class="token punctuation">
 L <span class="token operator">=</span> mat<span class="token punctuation">.</span>LLL<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
 p0<span class="token punctuation">,</span>p1 <span class="token operator">=</span> mat<span class="token punctuation">.</span>solve_left<span class="token punctuation">(</span>L<span class="token punctuation">)</span>            <span class="token comment"># p = L*mat**(-1) 这样也可以，一样的</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>p0<span class="token punctuation">,</span>p1<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>求a，b</p>
 <p>浅 ：然后就是通过gift的那个式子构造格子求解出a,b。先变化一下成文章开头的那种形式</p>
 </blockquote>
-<p><img src="https://latex.csdn.net/eq?a%5Ctimes%20p0%5Ctimes%20gift%5E%7B-1%7D-p1%5Ctimes%20gift%5E%7B-1%7D=b%20%5C%20mod%20%5C%20p0p1%5E2" alt="Alt text"></p>
+<figure>
+<img src="https://latex.csdn.net/eq?a%5Ctimes%20p0%5Ctimes%20gift%5E%7B-1%7D-p1%5Ctimes%20gift%5E%7B-1%7D%3Db%20%5C%20mod%20%5C%20p0p1%5E2" alt="" /><figcaption>Alt text</figcaption>
+</figure>
 <blockquote>
-<p>浅 ：a,b未知，然后a,b的bit位数远小于mod&#x3D;p0 * p1^2.构造格子</p>
+<p>浅 ：a,b未知，然后a,b的bit位数远小于mod=p0 * p1^2.构造格子</p>
 </blockquote>
-<p>$$<br>\M &#x3D;<br>    \begin{pmatrix}<br>    mod &amp; &amp; \<br>    A &amp; 1 &amp; \<br>    B &amp; &amp; K<br>    \end{pmatrix}<br>$$<br>$$<br>\<br>    A&#x3D;p0<em>gift^{-1}\<br>    B&#x3D;p1</em>gift^{-1}\<br>    mod&#x3D;p0*p1^2   \<br>    K&#x3D;2^{512}<br>  \<br>$$</p>
-<p>$$<br>\ A<em>a - B &#x3D; b \pmod{mod}<br>$$<br>$$<br>\begin{pmatrix} k &amp; a &amp; -1 \end{pmatrix}\times M &#x3D; \begin{pmatrix}k</em>p+A*a-B &amp; a &amp; -K\end{pmatrix}&#x3D;\begin{pmatrix}b &amp; a &amp; -K \end{pmatrix}<br>$$</p>
+<p><span class="math display">\[
+\\M = 
+    \begin{pmatrix} 
+    mod &amp; &amp; \\
+    A &amp; 1 &amp; \\
+    B &amp; &amp; K 
+    \end{pmatrix}
+\]</span> <span class="math display">\[
+\\ 
+    A=p0*gift^{-1}\\ 
+    B=p1*gift^{-1}\\
+    mod=p0*p1^2   \\
+    K=2^{512}
+  \\
+\]</span></p>
+<p><span class="math display">\[
+\\ A*a - B = b \pmod{mod}
+\]</span> <span class="math display">\[
+\begin{pmatrix} k &amp; a &amp; -1 \end{pmatrix}\times M = \begin{pmatrix}k*p+A*a-B &amp; a &amp; -K\end{pmatrix}=\begin{pmatrix}b &amp; a &amp; -K \end{pmatrix}
+\]</span></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">M <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>mod<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span>A<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span>B<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">512</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
 M <span class="token operator">=</span> Matrix<span class="token punctuation">(</span>M<span class="token punctuation">)</span>
 h <span class="token operator">=</span> M<span class="token punctuation">.</span>LLL<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -582,14 +632,13 @@ b <span class="token operator">=</span> <span class="token builtin">abs</span><s
 a <span class="token operator">=</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>hhh<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token comment"># a 11022212982424652632647405376934304592755205611710996956605750639057526541029596360155260174701488414125581957719469209021506720182948113423105539872264354 </span>
 <span class="token comment"># b 9864245136392130046455737513510508070496025625897918994462477425135301427183420481191209852444833597428299605829396903107753368813219485870517193682708546</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>$a*r_0 &#x3D; r_1 \pmod{p_1^2}$</p>
-<p>$\Rightarrow a<em>r_0</em>p_0 &#x3D; r_1<em>p_0 \pmod{p_0</em>p_1^2}$</p>
-<p>$p_1<em>n_0 &#x3D; p_0</em>p_1<em>q + r_0</em>p_1$</p>
-<p>$p_0<em>n_1 &#x3D; p_0</em>p_1<em>q + r_1</em>p_0$</p>
-<p>$\Rightarrow p_0<em>n_1 - p_1</em>n_0 &#x3D; r_1 * p_0 -r_0*p_1$</p>
-<p>$\Rightarrow p_0<em>n_1 - p_1</em>n_0 &#x3D; r_0*(a<em>p_0 - p_1)\pmod{p_0</em>p_1^2}$</p>
-<p>$\Rightarrow r_0 &#x3D; (p_0<em>n_1 - p_1</em>n_0)<em>(gift</em>b)^{-1}\pmod{p_0*p_1^2}$</p>
+<p><span class="math inline">\(a*r_0 = r_1 \pmod{p_1^2}\)</span></p>
+<p><span class="math inline">\(\Rightarrow a*r_0*p_0 = r_1*p_0 \pmod{p_0*p_1^2}\)</span></p>
+<p><span class="math inline">\(p_1*n_0 = p_0*p_1*q + r_0*p_1\)</span></p>
+<p><span class="math inline">\(p_0*n_1 = p_0*p_1*q + r_1*p_0\)</span></p>
+<p><span class="math inline">\(\Rightarrow p_0*n_1 - p_1*n_0 = r_1 * p_0 -r_0*p_1\)</span></p>
+<p><span class="math inline">\(\Rightarrow p_0*n_1 - p_1*n_0 = r_0*(a*p_0 - p_1)\pmod{p_0*p_1^2}\)</span></p>
+<p><span class="math inline">\(\Rightarrow r_0 = (p_0*n_1 - p_1*n_0)*(gift*b)^{-1}\pmod{p_0*p_1^2}\)</span></p>
 <blockquote>
 <p>完整代码</p>
 <p>环境：SageMath 9.3 Notebook</p>
@@ -639,7 +688,6 @@ d <span class="token operator">=</span> inverse<span class="token punctuation">(
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>p<span class="token punctuation">)</span>
 flag <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span>ZZ<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>

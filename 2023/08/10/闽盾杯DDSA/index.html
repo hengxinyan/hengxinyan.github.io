@@ -467,31 +467,55 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="闽盾杯"><a href="#闽盾杯" class="headerlink" title="闽盾杯"></a>闽盾杯</h1><h2 id="DDSA"><a href="#DDSA" class="headerlink" title="DDSA"></a>DDSA</h2><blockquote>
+                <h1 id="闽盾杯">闽盾杯</h1>
+<h2 id="ddsa">DDSA</h2>
+<blockquote>
 <p>已知条件</p>
 </blockquote>
-<p>$$<br>s &#x3D; m * (H(m) + pri*r) \pmod{q}<br>$$</p>
-<p>$$<br>s,H(m),r,q已知 \<br>pri \ 384bits<br>$$</p>
+<p><span class="math display">\[
+s = m * (H(m) + pri*r) \pmod{q}
+\]</span></p>
+<p><span class="math display">\[
+s,H(m),r,q已知 \\
+pri \ 384bits
+\]</span></p>
 <blockquote>
 <p>变换一下</p>
 </blockquote>
-<p>$$<br>s<em>H(m)^{-1}-m</em>pri<em>r</em>H(m)^{-1} &#x3D; m \pmod{q}<br>$$</p>
-<p>$$<br>-A<em>m</em>pri + B &#x3D; m \pmod{q}<br>$$</p>
+<p><span class="math display">\[
+s*H(m)^{-1}-m*pri*r*H(m)^{-1} = m \pmod{q}
+\]</span></p>
+<p><span class="math display">\[
+-A*m*pri + B = m \pmod{q}
+\]</span></p>
 <blockquote>
 <p>两个短向量随便造格子都能出了</p>
 </blockquote>
 <blockquote>
 <p>形式出来了，开始构造</p>
 </blockquote>
-<p>$\Rightarrow  -m<em>pri</em>r<em>H(m)^{-1}+s</em>H(m)^{-1} &#x3D; m \pmod{q}$</p>
-<p>$A &#x3D; -r*H(m)^{-1}$</p>
-<p>$B &#x3D; s*H(m)^{-1}$</p>
-<p>$x &#x3D; m*pri $</p>
-<p>$\Rightarrow A*x + B &#x3D; m \pmod{q}$</p>
+<p><span class="math inline">\(\Rightarrow -m*pri*r*H(m)^{-1}+s*H(m)^{-1} = m \pmod{q}\)</span></p>
+<p><span class="math inline">\(A = -r*H(m)^{-1}\)</span></p>
+<p><span class="math inline">\(B = s*H(m)^{-1}\)</span></p>
+<p>$x = m*pri $</p>
+<p><span class="math inline">\(\Rightarrow A*x + B = m \pmod{q}\)</span></p>
 <blockquote>
 <p>格</p>
 </blockquote>
-<p>$$<br>\left[ \begin{matrix}<br>k &amp; x &amp; 1<br>\end{matrix}\right] *<br>\left[ \begin{matrix}<br>q &amp;\ &amp;\ \<br>A &amp; 2^{512+384}&#x2F;2^{1024} &amp;\ \<br>B &amp; \ &amp; 2^{512}<br>\end{matrix} \right]<br>&#x3D;<br>\left[ \begin{matrix}<br>m &amp; x*2^{128} &amp; 2^{512}<br>\end{matrix}\right]<br>$$</p>
+<p><span class="math display">\[
+\left[ \begin{matrix}
+k &amp; x &amp; 1
+\end{matrix}\right] *
+\left[ \begin{matrix}
+q &amp;\ &amp;\ \\
+A &amp; 2^{512+384}/2^{1024} &amp;\ \\
+B &amp; \ &amp; 2^{512}
+\end{matrix} \right]
+=
+\left[ \begin{matrix}
+m &amp; x*2^{128} &amp; 2^{512}
+\end{matrix}\right]
+\]</span></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> libnum <span class="token keyword">import</span> <span class="token operator">*</span> 
@@ -518,7 +542,6 @@ m <span class="token operator">=</span> hh<span class="token punctuation">[</spa
 flag <span class="token operator">=</span> n2s<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
 <span class="token comment">#b'flag&#123;92f63c4190&#125;'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>

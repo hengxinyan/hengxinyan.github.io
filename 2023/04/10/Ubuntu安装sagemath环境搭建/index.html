@@ -467,7 +467,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Ubuntu安装sagemath环境搭建"><a href="#Ubuntu安装sagemath环境搭建" class="headerlink" title="Ubuntu安装sagemath环境搭建"></a>Ubuntu安装sagemath环境搭建</h1><blockquote>
+                <h1 id="ubuntu安装sagemath环境搭建">Ubuntu安装sagemath环境搭建</h1>
+<blockquote>
 <ul>
 <li>实现Ubuntu篇Crypto常见工具</li>
 </ul>
@@ -497,14 +498,16 @@
 </ul>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ningmengzhihe/article/details/127295333">解决办法</a></p>
 </blockquote>
-<h2 id="Ubuntu-安装-conda"><a href="#Ubuntu-安装-conda" class="headerlink" title="Ubuntu 安装 conda"></a>Ubuntu 安装 conda</h2><h3 id="安装-conda"><a href="#安装-conda" class="headerlink" title="安装 conda"></a>安装 conda</h3><pre class="line-numbers language-linux" data-language="linux"><code class="language-linux"># conda安装
+<h2 id="ubuntu-安装-conda">Ubuntu 安装 conda</h2>
+<h3 id="安装-conda">安装 conda</h3>
+<pre class="line-numbers language-linux" data-language="linux"><code class="language-linux"># conda安装
 wget https:&#x2F;&#x2F;mirrors.bfsu.edu.cn&#x2F;anaconda&#x2F;archive&#x2F;Anaconda3-2023.03-Linux-x86_64.sh  --no-check-certificate
 
 bash Anaconda3-2023.03-Linux-x86_64.sh
 
 source ~&#x2F;.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="管理虚拟环境的命令"><a href="#管理虚拟环境的命令" class="headerlink" title="管理虚拟环境的命令"></a>管理虚拟环境的命令</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#查看当前存在哪些虚拟环境</span>
+<h3 id="管理虚拟环境的命令">管理虚拟环境的命令</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#查看当前存在哪些虚拟环境</span>
 conda env <span class="token builtin">list</span> 
 conda info <span class="token operator">-</span>e     <span class="token comment">#或 </span>
 conda info <span class="token operator">-</span><span class="token operator">-</span>envs <span class="token comment">#或 </span>
@@ -521,8 +524,8 @@ conda remove <span class="token operator">-</span>n your_env_name<span class="to
 conda create <span class="token operator">-</span>n py39 python<span class="token operator">=</span><span class="token number">3.9</span>
 source activate py39
 source deactivate py39<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="python包的管理命令"><a href="#python包的管理命令" class="headerlink" title="python包的管理命令"></a>python包的管理命令</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#查看安装了哪些包</span>
+<h3 id="python包的管理命令">python包的管理命令</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#查看安装了哪些包</span>
 conda <span class="token builtin">list</span>
 <span class="token comment">#安装包</span>
 conda install package_name<span class="token punctuation">(</span>包名<span class="token punctuation">)</span>
@@ -530,8 +533,8 @@ conda install scrapy<span class="token operator">==</span><span class="token num
 conda install <span class="token operator">-</span>n 环境名 包名 <span class="token comment"># 在conda指定的某个环境中安装包</span>
  
 pip install <span class="token operator">-</span>i http<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>pypi<span class="token operator">/</span>simple Pillow<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="管理镜像源的命令"><a href="#管理镜像源的命令" class="headerlink" title="管理镜像源的命令"></a>管理镜像源的命令</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#检查更新当前conda</span>
+<h3 id="管理镜像源的命令">管理镜像源的命令</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#检查更新当前conda</span>
 conda update conda
 <span class="token comment">#更新anaconda</span>
 conda update anaconda
@@ -545,8 +548,9 @@ conda config <span class="token operator">-</span><span class="token operator">-
 conda config <span class="token operator">-</span><span class="token operator">-</span>add channels https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>msys2<span class="token operator">/</span>
 conda config <span class="token operator">-</span><span class="token operator">-</span>add channels https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>conda<span class="token operator">-</span>forge<span class="token operator">/</span>
 conda config <span class="token operator">-</span><span class="token operator">-</span>add channels https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>pkgs<span class="token operator">/</span>free<span class="token operator">/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="pip的常用命令"><a href="#pip的常用命令" class="headerlink" title="pip的常用命令"></a>pip的常用命令</h2><h3 id="管理镜像源的命令-1"><a href="#管理镜像源的命令-1" class="headerlink" title="管理镜像源的命令"></a>管理镜像源的命令</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 升级pip</span>
+<h2 id="pip的常用命令">pip的常用命令</h2>
+<h3 id="管理镜像源的命令-1">管理镜像源的命令</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 升级pip</span>
 pip install pip <span class="token operator">-</span>U
 <span class="token comment"># 显示目前pip的数据源有哪些</span>
 pip config <span class="token builtin">list</span>
@@ -566,8 +570,8 @@ pip search flask  <span class="token comment"># 搜素flask安装包</span>
 <span class="token comment"># 安装一次</span>
 pip install <span class="token operator">-</span><span class="token operator">-</span>index<span class="token operator">-</span>url https<span class="token punctuation">:</span><span class="token operator">//</span>pypi<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>simple<span class="token operator">/</span> oracle
 pip install <span class="token operator">-</span><span class="token operator">-</span>index<span class="token operator">-</span>url https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>pypi<span class="token operator">/</span>simple<span class="token operator">/</span> oracle<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="管理python包的命令"><a href="#管理python包的命令" class="headerlink" title="管理python包的命令"></a>管理python包的命令</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">pip <span class="token builtin">list</span> <span class="token comment">#列出当前缓存的包</span>
+<h3 id="管理python包的命令">管理python包的命令</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pip <span class="token builtin">list</span> <span class="token comment">#列出当前缓存的包</span>
 pip purge <span class="token comment">#清除缓存</span>
 pip remove <span class="token comment">#删除对应的缓存</span>
 pip <span class="token builtin">help</span> <span class="token comment">#帮助</span>
@@ -580,24 +584,25 @@ pip install <span class="token operator">-</span>r requirements<span class="toke
 <span class="token comment"># 安装一次</span>
 pip install <span class="token operator">-</span><span class="token operator">-</span>index<span class="token operator">-</span>url https<span class="token punctuation">:</span><span class="token operator">//</span>pypi<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>simple<span class="token operator">/</span> oracle
 <span class="token comment"># pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple  PyQt5==5.15.4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Sagemath安装及使用"><a href="#Sagemath安装及使用" class="headerlink" title="Sagemath安装及使用"></a>Sagemath安装及使用</h2><h3 id="安装sagemath安装"><a href="#安装sagemath安装" class="headerlink" title="安装sagemath安装"></a>安装sagemath安装</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ckm1607011/article/details/106724624">安装sagemath</a></p>
+<h2 id="sagemath安装及使用">Sagemath安装及使用</h2>
+<h3 id="安装sagemath安装">安装sagemath安装</h3>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ckm1607011/article/details/106724624">安装sagemath</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">sudo <span class="token operator">-</span>i
 apt update
 apt<span class="token operator">-</span>get update
 apt install sagemath<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="sage安装第三方库"><a href="#sage安装第三方库" class="headerlink" title="sage安装第三方库"></a>sage安装第三方库</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8f37af3d3ae5">sage安装第三方库</a></p>
+<h3 id="sage安装第三方库">sage安装第三方库</h3>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8f37af3d3ae5">sage安装第三方库</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">sage <span class="token operator">-</span><span class="token operator">-</span>pip install <span class="token punctuation">[</span>第三方库<span class="token punctuation">]</span>
 sage <span class="token operator">-</span><span class="token operator">-</span>pip <span class="token builtin">list</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="创建脚本"><a href="#创建脚本" class="headerlink" title="创建脚本"></a>创建脚本</h3><pre class="line-numbers language-none"><code class="language-none">touch test.py
+<h3 id="创建脚本">创建脚本</h3>
+<pre class="line-numbers language-none"><code class="language-none">touch test.py
 touch test.sage<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">sage test<span class="token punctuation">.</span>py
+<h3 id="运行脚本">运行脚本</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">sage test<span class="token punctuation">.</span>py
 sage test<span class="token punctuation">.</span>sage<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="Sagemath使用"><a href="#Sagemath使用" class="headerlink" title="Sagemath使用"></a>Sagemath使用</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># sagemath</span>
+<h2 id="sagemath使用">Sagemath使用</h2>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># sagemath</span>
 x <span class="token operator">=</span> var<span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span>
 factor<span class="token punctuation">(</span>x<span class="token operator">^</span><span class="token number">5</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
 <span class="token comment"># (x^4 + x^3 + x^2 + x + 1)*(x - 1)</span>
@@ -609,7 +614,6 @@ phi <span class="token operator">=</span> euler_phi<span class="token punctuatio
 n <span class="token operator">=</span> x<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">+</span> y<span class="token operator">**</span><span class="token number">2</span>
 x<span class="token punctuation">,</span>y <span class="token operator">=</span> two_squares<span class="token punctuation">(</span>n<span class="token punctuation">)</span>
 注分解网站<span class="token punctuation">:</span>https<span class="token punctuation">:</span><span class="token operator">//</span>www<span class="token punctuation">.</span>alpertron<span class="token punctuation">.</span>com<span class="token punctuation">.</span>ar<span class="token operator">/</span>ECM<span class="token punctuation">.</span>HTM<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.osgeo.cn/sagemath/prep/quickstart.html">sagemath中文文档参见</a></p>
 <p><a target="_blank" rel="noopener" href="https://doc.sagemath.org/html/en/tutorial/introduction.html">sagemath源文档</a></p>

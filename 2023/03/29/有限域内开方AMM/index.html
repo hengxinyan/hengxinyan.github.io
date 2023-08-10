@@ -467,20 +467,21 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="有限域内开方AMM算法"><a href="#有限域内开方AMM算法" class="headerlink" title="有限域内开方AMM算法"></a>有限域内开方AMM算法</h1><blockquote>
-<ol>
+                <h1 id="有限域内开方amm算法">有限域内开方AMM算法</h1>
+<blockquote>
+<ol type="1">
 <li>学长的博客</li>
 </ol>
-<p><a target="_blank" rel="noopener" href="https://wusthandy.github.io/2021/02/04/ji-5-dao-rsa/#toc-heading-3">[NCTF2019]easyRSA_handy’ blog</a></p>
-<ol start="2">
+<p><a target="_blank" rel="noopener" href="https://wusthandy.github.io/2021/02/04/ji-5-dao-rsa/#toc-heading-3">[NCTF2019]easyRSA_handy' blog</a></p>
+<ol start="2" type="1">
 <li>一个学长推荐的博客</li>
 </ol>
 <p><a target="_blank" rel="noopener" href="https://lazzzaro.github.io/2020/05/06/crypto-RSA/index.html"><em>如何在有限域内开根</em>？</a></p>
-<ol start="3">
+<ol start="3" type="1">
 <li>最全最详细的AMM解析，附例题</li>
 </ol>
 <p><a target="_blank" rel="noopener" href="https://forum.butian.net/share/1689"><strong>有限域上的高次开根AMM算法在RSA上的应用</strong></a></p>
-<ol start="4">
+<ol start="4" type="1">
 <li>RSA快速进阶的一个题单</li>
 </ol>
 <p><a target="_blank" rel="noopener" href="https://www.ctfer.vip/problem/sheet/6">Xenny的RSA题单</a></p>
@@ -594,11 +595,10 @@ start <span class="token operator">=</span> time<span class="token punctuation">
 end <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Finished in &#123;&#125; seconds."</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>end <span class="token operator">-</span> start<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>搜到的题解</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/93906027">https://zhuanlan.zhihu.com/p/93906027</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.soreatu.com/posts/intended-solution-to-crypto-problems-in-nctf-2019/#easyrsa909pt-2solvers">https://blog.soreatu.com/posts/intended-solution-to-crypto-problems-in-nctf-2019/#easyrsa909pt-2solvers</a></p>
+<p>https://zhuanlan.zhihu.com/p/93906027</p>
+<p>https://blog.soreatu.com/posts/intended-solution-to-crypto-problems-in-nctf-2019/#easyrsa909pt-2solvers</p>
 </blockquote>
 <p>脚本 实用性</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#脚本2</span>
@@ -623,7 +623,6 @@ mqs<span class="token operator">=</span>g<span class="token punctuation">.</span
         solution <span class="token operator">=</span> <span class="token builtin">hex</span><span class="token punctuation">(</span>CRT_list<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>p<span class="token punctuation">,</span> q<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
         <span class="token keyword">if</span> solution<span class="token punctuation">.</span>startswith<span class="token punctuation">(</span><span class="token string">'666c'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             <span class="token keyword">print</span><span class="token punctuation">(</span>solution<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>脚本</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#脚本1</span>
 <span class="token comment">#Sage</span>
@@ -739,7 +738,6 @@ end <span class="token operator">=</span> time<span class="token punctuation">.<
 <span class="token operator">*</span> 复制并使用代码请注明引用出处哦<span class="token operator">~</span>
 <span class="token operator">*</span> Lazzaro @ https<span class="token punctuation">:</span><span class="token operator">//</span>lazzzaro<span class="token punctuation">.</span>github<span class="token punctuation">.</span>io
 <span class="token operator">*</span><span class="token operator">/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><a target="_blank" rel="noopener" href="https://4xwi11.github.io/posts/80806ae5/?highlight=funnyrsa">这个师傅没给脚本</a></p>
 
                 

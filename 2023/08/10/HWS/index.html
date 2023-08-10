@@ -467,7 +467,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="HWS"><a href="#HWS" class="headerlink" title="HWS"></a>HWS</h1><h2 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h2><blockquote>
+                <h1 id="hws">HWS</h1>
+<h2 id="rsa">RSA</h2>
+<blockquote>
 <p>2022 D^3CTF 原题</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41626232/article/details/130376716?spm=1001.2014.3001.5502">无趣的浅</a></p>
 </blockquote>
@@ -489,11 +491,12 @@ q<span class="token operator">=</span>N<span class="token operator">//</span>p<s
 <span class="token keyword">assert</span> p<span class="token operator">^</span><span class="token number">7</span><span class="token operator">*</span>q<span class="token operator">==</span>N
 d<span class="token operator">=</span>inverse<span class="token punctuation">(</span><span class="token number">0x10001</span><span class="token punctuation">,</span><span class="token punctuation">(</span>p<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>q<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 long_to_bytes<span class="token punctuation">(</span>ZZ<span class="token punctuation">(</span><span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>p<span class="token operator">*</span>q<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="random"><a href="#random" class="headerlink" title="random"></a>random</h2><blockquote>
+<h2 id="random">random</h2>
+<blockquote>
 <p>源博客<a target="_blank" rel="noopener" href="https://www.cnblogs.com/fuxuqiannian/p/17560359.html">fuxuqiannian</a></p>
 </blockquote>
-<h3 id="先开方"><a href="#先开方" class="headerlink" title="先开方"></a>先开方</h3><blockquote>
+<h3 id="先开方">先开方</h3>
+<blockquote>
 <p>开到30次方很奇怪</p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token number">36</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -501,7 +504,6 @@ long_to_bytes<span class="token punctuation">(</span>ZZ<span class="token punctu
     b <span class="token operator">=</span> <span class="token builtin">bin</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>bit_length<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>成功分解</p>
 </blockquote>
@@ -514,7 +516,6 @@ p <span class="token operator">=</span> <span class="token punctuation">[</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">%</span>b <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         p<span class="token punctuation">.</span>append<span class="token punctuation">(</span>b<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>取指数</p>
 </blockquote>
@@ -525,12 +526,12 @@ p <span class="token operator">=</span> <span class="token punctuation">[</span>
         n <span class="token operator">=</span> n<span class="token operator">//</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
 <span class="token comment"># [5, 4, 3, 4, 3, 5, 1, 2, 3]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="有限域内开108次方"><a href="#有限域内开108次方" class="headerlink" title="有限域内开108次方"></a>有限域内开108次方</h3><blockquote>
+<h3 id="有限域内开108次方">有限域内开108次方</h3>
+<blockquote>
 <p>位数和n相似只比n小两位，爆破大概十分钟</p>
 </blockquote>
-<p>$n \ 5251bits$</p>
-<p>$m \ 5247bits$</p>
+<p><span class="math inline">\(n \ 5251bits\)</span></p>
+<p><span class="math inline">\(m \ 5247bits\)</span></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># sage</span>
 <span class="token keyword">from</span> threading <span class="token keyword">import</span> Thread
 <span class="token keyword">from</span> tqdm <span class="token keyword">import</span> <span class="token operator">*</span>
@@ -571,8 +572,9 @@ res<span class="token operator">=</span><span class="token punctuation">[</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span>
 
 <span class="token comment"># b'flag&#123;U_ar3_The_K1ng_oF_rand0m_kin9Dom!&#125;DTv\x8e\x1e\xbdwQ\xdb+ \x92\xc5\\\\\x11|\x81\xd2\xb5\x0b\xec\x98*\xa37\xda\xcaB#\xd5IQ\xe3\x07h4\x86\t\x00\xfe\xec-~+!\xb5H\x074p\xc1c\x9c\xa1\x96|\x8d&amp;\xf9\xdf\x11\xb1%i\\\x86V:\x9dc9%\xaa\x94\x9f\x04\xed1\xa8=\x90L\xfbpr\x90\\(\x85Y\xef\x83\x875:\x12\xa3\x9f\xdc\x8b\xea:\x08T\x02\xc0\x17\xe0\xd9\xb2\x16\xe3\x1b\x11\x97>\xf9\x90h\xb2\x9d\x0c\x1a\xa5\xb8\x99aiv&#125;\x1d\xb4\x8e\xa9\x9d\xce9\x10\x00\xc2||\xf8*\xb0\xeb\x9e\x90&lt;I\xa7\xc3\xde\x90\x0c\xc2\xc2\x92\xd8rX\'\xb4\x17\xc4NE#:q\x83Z\x82\x15\xa74&#125;\xb6\xae\xcd=\xef\xbb\xf8\xb1$d\xba\xef\xd2Z\xff\x00\xa0\xe4\x07\xff \xd4\x15\x15\xe4\x00@)\xfbKp/\xef\x19o:bj\xbb\xca\xa2l\x08\x19\xd9\xe3$;\x8d\x85\xec\x11O\x10\xff\xca\xb5\x07\xed\xb6Xw\xa7\xf4\x14A[t \xa5x\xf7E5\xd1~\xe7\n"\x9e\x12&amp;\x00 \xb0\xc4\x07\xbc\xdc\xcc\x0blb\xa0\xb6\xc0D_\xc0\xaa&amp;\x1d\x96h\xe1\x908c\xdd,d\x01&#123;r\xdeG\xfd&#123;\xfc)L\x92+\x7fa\x9e2\xc4\x84I\x85\xb0b\x9e\x0b&lt;y\x03\xa1x/\x07\n\x08\xfbU\xad\xf5\x0e2\xb2\x10uN\xa83\xd3\x9f\x9a\xd0\xa5L\xda>;v\xd2\xfc\x86\xcb\xc4\x02\xdbo\\&#123;\xf6M\xd4k-\x08\xcc\xd1B+.z\xa9\xfc\x1a\x9f\xd3\xb3\xc3\x95x\x87=I\xd2\x16\x05r\xe5\xdf\xb9e\xbb\x9d\xcc\xec\xcd\x9fyq\xd4v\xf5\xc6\xda\xba\xd3\t\x7fha\xd5 \xbf\xbe\x12D\x15"@\xa9\x80\xab\xd4\xa1\x1c9\x96|\xf6\x92i\x8f!\xa4\xc2y\xd9>>\xac\x13`\xca\xcab\x11&#125;\x1a\xf3GS\x9e\x06\x95\xc4\xd6\xe77\xd8(\x87G*\xf1v\t\xcd\xf7kfg\xcb3\xee&#125;\x8fy\t_&lt;\xde\x0eb\x8c7\xc0\xdfM\xfe\xb8B0\xf6\xad&#123;_\xfe pN\xddPR\xb0\xb7\xdf\xab$B\x1f\x99N\xccd\xe6\xf7\xbe\x02Z\x1c\x01D\xb1\xef#7\xcc\x9d\x19h&amp;s\xc5Exz\xeb\x86\x90\xe2\xc6H\xd2\xc2G\xe1,\x1e\xd4\xd6I\xa8,\x1a\xf8\x00\xbb&lt; \xd9\t\xdb>6\x96:\x9f[\xacF@B\x11\xae\xab\x17\x1f\xec^\xf9\xd69\x0e\r\x011\xce\xb6\x91QX\xbf^hR\xde\xb7&amp;\x1a\x10\x93\xea\x84\x82\x86+\x9d\xc7\xc2T_r\x8eQ\xe3\xc2\x1d\xf3\xa8\x94\xa7\xea'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h1 id="0ctf-2016"><a href="#0ctf-2016" class="headerlink" title="[0ctf 2016]"></a>[0ctf 2016]</h1><h2 id="rsa"><a href="#rsa" class="headerlink" title="rsa"></a>rsa</h2><blockquote>
+<h1 id="ctf-2016">[0ctf 2016]</h1>
+<h2 id="rsa-1">rsa</h2>
+<blockquote>
 <p>贴一个这个题目</p>
 <p>有相似</p>
 </blockquote>
@@ -608,7 +610,6 @@ flag<span class="token operator">=</span><span class="token punctuation">[</span
     m<span class="token operator">=</span>long_to_bytes<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
     <span class="token keyword">if</span> <span class="token string">b'flag'</span> <span class="token keyword">or</span> <span class="token string">b'ctf'</span> <span class="token keyword">in</span> m<span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>

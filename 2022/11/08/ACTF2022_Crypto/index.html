@@ -467,7 +467,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="ACTF2022"><a href="#ACTF2022" class="headerlink" title="ACTF2022"></a>ACTF2022</h1><h3 id="impossible-RSA"><a href="#impossible-RSA" class="headerlink" title="impossible RSA"></a>impossible RSA</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>PublicKey <span class="token keyword">import</span> RSA
+                <h1 id="actf2022">ACTF2022</h1>
+<h3 id="impossible-rsa">impossible RSA</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>PublicKey <span class="token keyword">import</span> RSA
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">import</span> gmpy2
 e <span class="token operator">=</span> <span class="token number">65537</span>
@@ -490,16 +492,15 @@ d <span class="token operator">=</span> gmpy2<span class="token punctuation">.</
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token comment"># b'ACTF&#123;F1nD1nG_5pEcia1_n_i5_nOt_eA5y&#125;'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="Rsa-LEAK"><a href="#Rsa-LEAK" class="headerlink" title="Rsa LEAK"></a>Rsa LEAK</h3><ol>
-<li>random_prime(n,proof&#x3D;None,lbound&#x3D;2)<br> 该函数返回一个随机数 介于 lbound 和 n 之间，即从小于或等于n的素数集中随机选择返回的素数p。</li>
+<h3 id="rsa-leak">Rsa LEAK</h3>
+<ol type="1">
+<li>random_prime(n,proof=None,lbound=2) 该函数返回一个随机数 介于 lbound 和 n 之间，即从小于或等于n的素数集中随机选择返回的素数p。</li>
 </ol>
-<p>​    </p>
-<p>   PS:SegeMath使用指南<a target="_blank" rel="noopener" href="https://blog.csdn.net/UN_spoken/article/details/102490953">https://blog.csdn.net/UN_spoken/article/details/102490953</a></p>
+<p>​</p>
+<p>PS:SegeMath使用指南https://blog.csdn.net/UN_spoken/article/details/102490953</p>
 <ul>
 <li><p>中间相遇攻击</p>
-<p>中间相遇思想——以空间换时间</p>
-</li>
+<p>中间相遇思想------以空间换时间</p></li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">dic <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
 <span class="token keyword">for</span> i <span class="token keyword">in</span> tqdm<span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">**</span><span class="token number">24</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -512,19 +513,18 @@ m <span class="token operator">=</span> <span class="token builtin">pow</span><s
         <span class="token keyword">break</span>
 <span class="token comment">#rp = 405771</span>
 <span class="token comment">#rq = 11974933</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
-<li><p>对于n&#x3D;pp.qq，不难发现a.b就等于n开四次根取整，证明如下（rp和rq对于a和b来说相当于一个很小的量）：<img src="C:\Users\Haier\AppData\Roaming\Typora\typora-user-images\image-20220706021606058.png" alt="image-20220706021606058"></p>
-</li>
+<li><p>对于n=pp.qq，不难发现a.b就等于n开四次根取整，证明如下（rp和rq对于a和b来说相当于一个很小的量）：<img src="C:\Users\Haier\AppData\Roaming\Typora\typora-user-images\image-20220706021606058.png" alt="image-20220706021606058" /></p></li>
 <li><p>整理一下所有的已知条件：</p>
-<p>rp&#x3D;pp−p</p>
-<p>rq&#x3D;qq−q</p>
-<p>p∗q&#x3D;(ab)^4</p>
-<p>pp∗qq&#x3D;n</p>
+<p>rp=pp−p</p>
+<p>rq=qq−q</p>
+<p>p∗q=(ab)^4</p>
+<p>pp∗qq=n</p>
 <p>如果我们用rp乘rq，会出现n,pp.q,pp.q,p.q ，由于 pp.qpp.q 是未知的，所以需要构造这个来相消；因此考虑 rp.qq，同理rq.pp，消去以后剩下 p.q 和 n ，都是已知量，最后得到：</p>
-<p><img src="C:\Users\Haier\AppData\Roaming\Typora\typora-user-images\image-20220706022132661.png" alt="image-20220706022132661"></p>
-<p>等式两边同乘qq得到关于qq的一元二次方程，解出来就是qq，完整过程：</p>
-</li>
+<figure>
+<img src="C:\Users\Haier\AppData\Roaming\Typora\typora-user-images\image-20220706022132661.png" alt="" /><figcaption>image-20220706022132661</figcaption>
+</figure>
+<p>等式两边同乘qq得到关于qq的一元二次方程，解出来就是qq，完整过程：</p></li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gmpy2
 <span class="token keyword">from</span> tqdm <span class="token keyword">import</span> tqdm
@@ -566,7 +566,6 @@ d <span class="token operator">=</span> gmpy2<span class="token punctuation">.</
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token comment"># b'ACTF&#123;lsb_attack_in_RSA|a32d7f&#125;'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>

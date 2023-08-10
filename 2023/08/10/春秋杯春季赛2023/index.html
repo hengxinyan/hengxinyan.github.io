@@ -467,7 +467,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="春秋杯春季赛2023"><a href="#春秋杯春季赛2023" class="headerlink" title="春秋杯春季赛2023"></a>春秋杯春季赛2023</h1><h2 id="checkin"><a href="#checkin" class="headerlink" title="checkin"></a>checkin</h2><blockquote>
+                <h1 id="春秋杯春季赛2023">春秋杯春季赛2023</h1>
+<h2 id="checkin">checkin</h2>
+<blockquote>
 <p>先连分数求解pell曲线的最小整数解，在二项式展开求指数part1和part2</p>
 <p>pell曲线先求出x，y</p>
 </blockquote>
@@ -485,17 +487,15 @@
 D <span class="token operator">=</span> <span class="token number">1117</span>
 r <span class="token operator">=</span> pell<span class="token punctuation">(</span>D<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>  <span class="token comment"># 默认取最小</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 二项式展开</span>
 enc1 <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span><span class="token number">233</span> <span class="token operator">*</span> n <span class="token operator">**</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> part1<span class="token punctuation">,</span> n <span class="token operator">**</span> <span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>$enc_1 &#x3D; (233*n^{2} +1)^{part1} \pmod{n^3}$</p>
-<p>$enc_1 &#x3D; C_{part1}^{0}<em>(233</em>n^2)^{0}*1^{part1} + C_{part1}^{1} <em>(233</em>n^2)^{1}*1^{part1-1} + C_{part1}^{2} <em>(233</em>n^2)^{2}*1^{part1-2}…..$</p>
+<p><span class="math inline">\(enc_1 = (233*n^{2} +1)^{part1} \pmod{n^3}\)</span></p>
+<p><span class="math inline">\(enc_1 = C_{part1}^{0}*(233*n^2)^{0}*1^{part1} + C_{part1}^{1} *(233*n^2)^{1}*1^{part1-1} + C_{part1}^{2} *(233*n^2)^{2}*1^{part1-2}.....\)</span></p>
 <blockquote>
-<p>后面都模$n^{3}$都是0</p>
+<p>后面都模<span class="math inline">\(n^{3}\)</span>都是0</p>
 </blockquote>
-<p>$enc_1 &#x3D; 1 + part1 <em>(233</em>n^2)$</p>
-<p>$part1 &#x3D; (enc_1 - 1)&#x2F;(233*n^2)$</p>
+<p><span class="math inline">\(enc_1 = 1 + part1 *(233*n^2)\)</span></p>
+<p><span class="math inline">\(part1 = (enc_1 - 1)/(233*n^2)\)</span></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> libnum <span class="token keyword">import</span> <span class="token operator">*</span>
@@ -519,19 +519,19 @@ flag2 <span class="token operator">=</span> n2s<span class="token punctuation">(
 
 flag <span class="token operator">=</span> flag1 <span class="token operator">+</span> flag2
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>part2 一样的，也是二项式展开，不懂就问我</p>
-<p>x &#x3D; var(‘x’)     # 这个是声明 x 是变量</p>
-<p>f &#x3D; x*(x-1)<em>y^2</em>n^2 + 2<em>x</em>y<em>n + 2 - 2</em>enc2   # 一个关于x的方程</p>
-<p>part2 &#x3D; f.roots()    #  f.roots() 是方程的解</p>
+<p>x = var('x') # 这个是声明 x 是变量</p>
+<p>f = x<em>(x-1)</em>y^2<em>n^2 + 2</em>x<em>y</em>n + 2 - 2*enc2 # 一个关于x的方程</p>
+<p>part2 = f.roots() # f.roots() 是方程的解</p>
 </blockquote>
-<h2 id="backdoor"><a href="#backdoor" class="headerlink" title="backdoor"></a>backdoor</h2><blockquote>
+<h2 id="backdoor">backdoor</h2>
+<blockquote>
 <p>除了RSA还有什么非对称加密呢，那么请了解一下ECC，和函数EllipticCurve</p>
 </blockquote>
 <blockquote>
-<p>EllipticCurve(F, [A, B])   &#x3D;&gt;  y^2 &#x3D; x^3 + A*x + B </p>
-<p>E1 &#x3D; EllipticCurve([A,B,C,D,E])   &#x3D;&gt; y^2 + A<em>x</em>y + C<em>y &#x3D; x^3 + B</em>x^2 + D*x + E</p>
+<p>EllipticCurve(F, [A, B]) =&gt; y^2 = x^3 + A*x + B</p>
+<p>E1 = EllipticCurve([A,B,C,D,E]) =&gt; y^2 + A<em>x</em>y + C<em>y = x^3 + B</em>x^2 + D*x + E</p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 自己在sagemath构造一下</span>
 P <span class="token operator">=</span> getPrime<span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">)</span> 
@@ -544,12 +544,12 @@ E <span class="token operator">=</span> EllipticCurve<span class="token punctuat
 <p>那么开始解题</p>
 </blockquote>
 <p>已知：</p>
-<p>$M1 &#x3D; k1 * G$</p>
-<p>$Y &#x3D; x * G$</p>
-<p>$t &#x3D; 1$</p>
-<p>$z &#x3D; (k1 - w * t) * G + (-a*k1 - b) * Y$</p>
-<p>$shared_key_2 &#x3D; k2*B_$</p>
-<p>$\Rightarrow z &#x3D; M1 - w<em>G - a</em>x<em>M1 - b</em>x*G$</p>
+<p><span class="math inline">\(M1 = k1 * G\)</span></p>
+<p><span class="math inline">\(Y = x * G\)</span></p>
+<p><span class="math inline">\(t = 1\)</span></p>
+<p><span class="math inline">\(z = (k1 - w * t) * G + (-a*k1 - b) * Y\)</span></p>
+<p><span class="math inline">\(shared\_key_2 = k2*B\_\)</span></p>
+<p><span class="math inline">\(\Rightarrow z = M1 - w*G - a*x*M1 - b*x*G\)</span></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> libnum <span class="token keyword">import</span> <span class="token operator">*</span>
@@ -586,8 +586,8 @@ key <span class="token operator">=</span> k2<span class="token operator">*</span
 ct <span class="token operator">=</span> <span class="token string">b'\x1a\xfb\xa2\xe1\x86\x04\xfak\x9a\xa3\xd15\xb8\x16\x1d\xbc\xa9S\xf5;\xfa\xf1\x08dn~\xd4\x94\xa4;^*\xf6\xd7\xf10\xa3\xe1k`\x1f-\xef\x80\x16\x80\x80\xe2'</span>
 flag <span class="token operator">=</span> de_enc<span class="token punctuation">(</span>ct<span class="token punctuation">,</span>key<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="ecdsa"><a href="#ecdsa" class="headerlink" title="ecdsa"></a>ecdsa</h2><blockquote>
+<h2 id="ecdsa">ecdsa</h2>
+<blockquote>
 <p>题目</p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os
@@ -617,36 +617,54 @@ sig1 = '3f4a6f288e35a4397201d246a98c1f9cfa463e67717fbbdcbd26d7fac75f875855455c2b
 sig2 = '9f563b21f0ee31b2f7a1a8c6edc8ff23b63e0a9d5dd4a699ecc3164871b4982df51bb2feb4bc06c578afd21d3e6227231dd5fe1d8440f3dcd025fd3ea68f5516'
 enc  = 'cc66d251bfa54954890c81dc1c607bae716573949f327db18aa1f4c0f420b8d29dc7e7ff9edb17b90306bd2aa753fc3fd4dafb9cc4b771cbdd79000ef05a40c0'
 '''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
-<p>浅：下面的运算都是在$ecdsa.SECP256k1$的阶下的</p>
+<p>浅：下面的运算都是在<span class="math inline">\(ecdsa.SECP256k1\)</span>的阶下的</p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>ecdsa<span class="token punctuation">.</span>SECP256k1<span class="token punctuation">.</span>generator<span class="token punctuation">.</span>order<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
 <span class="token comment"># 115792089237316195423570985008687907852837564279074904382605163141518161494337</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>已知：</p>
-<p>$key_1 &#x3D; key_0 + e_1$</p>
-<p>$key_2 &#x3D; key_0 + e_2$</p>
-<p>$key_1*s_1 &#x3D; sha256(m_1) + r_1 * key$</p>
-<p>$key_2*s_2 &#x3D; sha256(m_2) + r_2 * key$</p>
-<p>$key_0 :(256bits) \ e_1,e_2 : (16bits) \ key:(240bits)$</p>
-<p>$output:(s_1,r_1),(s_2,r_2),(m_1),(m_2)$</p>
+<p><span class="math inline">\(key_1 = key_0 + e_1\)</span></p>
+<p><span class="math inline">\(key_2 = key_0 + e_2\)</span></p>
+<p><span class="math inline">\(key_1*s_1 = sha256(m_1) + r_1 * key\)</span></p>
+<p><span class="math inline">\(key_2*s_2 = sha256(m_2) + r_2 * key\)</span></p>
+<p><span class="math inline">\(key_0 :(256bits) \\ e_1,e_2 : (16bits) \\ key:(240bits)\)</span></p>
+<p><span class="math inline">\(output:(s_1,r_1),(s_2,r_2),(m_1),(m_2)\)</span></p>
 <blockquote>
 <p>求key</p>
 </blockquote>
-<p>$key1 &#x3D; (m1 + r1 * key ) * s1^{-1}$</p>
-<p>$key2 &#x3D; (m2 + r2 * key ) * s2^{-1}$</p>
-<p>$key_1 - key_2 &#x3D; m_1<em>s_1^{-1} - m_2</em>s_2^{-1} + r_1 * key * s_1^{-1} - r_2 * key *s_2^{-1}$</p>
-<p>$\Rightarrow key_1 - key_2 &#x3D; m_1<em>s_1^{-1} - m_2</em>s_2^{-1} + key*(r_1 * s_1^{-1} - r_2 *s_2^{-1}) &#x3D; e_1 - e_2$</p>
-<p>$A &#x3D; r_1 * s_1^{-1} - r_2 *s_2^{-1}$</p>
-<p>$B &#x3D; m_1<em>s_1^{-1} - m_2</em>s_2^{-1}$</p>
-<p>$\Rightarrow A*key + B &#x3D; e_1 - e_2 $ </p>
-<p>$key:(240bits)$</p>
+<p><span class="math inline">\(key1 = (m1 + r1 * key ) * s1^{-1}\)</span></p>
+<p><span class="math inline">\(key2 = (m2 + r2 * key ) * s2^{-1}\)</span></p>
+<p><span class="math inline">\(key_1 - key_2 = m_1*s_1^{-1} - m_2*s_2^{-1} + r_1 * key * s_1^{-1} - r_2 * key *s_2^{-1}\)</span></p>
+<p><span class="math inline">\(\Rightarrow key_1 - key_2 = m_1*s_1^{-1} - m_2*s_2^{-1} + key*(r_1 * s_1^{-1} - r_2 *s_2^{-1}) = e_1 - e_2\)</span></p>
+<p><span class="math inline">\(A = r_1 * s_1^{-1} - r_2 *s_2^{-1}\)</span></p>
+<p><span class="math inline">\(B = m_1*s_1^{-1} - m_2*s_2^{-1}\)</span></p>
+<p>$A*key + B = e_1 - e_2 $</p>
+<p><span class="math inline">\(key:(240bits)\)</span></p>
 <blockquote>
-<p>Z为需要自己构造的数，在这里k为 $\Delta k$的$bits$</p>
-<p>$Z &#x3D;2^{16}&#x2F;2^{240}$  </p>
+<p>Z为需要自己构造的数，在这里k为 <span class="math inline">\(\Delta k\)</span>的<span class="math inline">\(bits\)</span></p>
+<p><span class="math inline">\(Z =2^{16}/2^{240}\)</span></p>
 </blockquote>
-<p>$$<br>\left[<br> \begin{matrix}<br> n &amp; key &amp; 1<br> \end{matrix}<br>\right]<br>*<br>\left[<br> \begin{matrix}<br>  P &amp; &amp; \<br>  A &amp; 2^{k}&#x2F;2^{240} &amp; \<br>  B &amp; &amp; 2^k<br> \end{matrix}<br>\right]<br>&#x3D;<br>\left[<br> \begin{matrix}<br> \Delta key &amp; key*2^{16}&#x2F;2^{240} &amp; 2^{16}<br> \end{matrix}<br>\right]<br>$$</p>
+<p><span class="math display">\[
+\left[ 
+ \begin{matrix}
+ n &amp; key &amp; 1
+ \end{matrix}
+\right]
+*
+\left[ 
+ \begin{matrix} 
+  P &amp; &amp; \\
+  A &amp; 2^{k}/2^{240} &amp; \\
+  B &amp; &amp; 2^k
+ \end{matrix}
+\right]
+=
+\left[
+ \begin{matrix}
+ \Delta key &amp; key*2^{16}/2^{240} &amp; 2^{16}
+ \end{matrix}
+\right]
+\]</span></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> libnum <span class="token keyword">import</span> <span class="token operator">*</span>
@@ -690,6 +708,7 @@ d <span class="token operator">=</span> sha512<span class="token punctuation">(<
 c <span class="token operator">=</span> <span class="token builtin">bytes</span><span class="token punctuation">.</span>fromhex<span class="token punctuation">(</span>enc<span class="token punctuation">)</span>   <span class="token comment"># 等于long_to_bytes(int(enc,16))</span>
 m <span class="token operator">=</span> strxor<span class="token punctuation">(</span>d<span class="token punctuation">,</span>c<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>

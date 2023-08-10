@@ -467,7 +467,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="DiceCTF2021-newcrypt-v2"><a href="#DiceCTF2021-newcrypt-v2" class="headerlink" title="[DiceCTF2021]newcrypt v2"></a>[DiceCTF2021]newcrypt v2</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/env python3</span>
+                <h2 id="dicectf2021newcrypt-v2">[DiceCTF2021]newcrypt v2</h2>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/env python3</span>
 
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 
@@ -497,7 +498,6 @@ g <span class="token operator">=</span> Generator<span class="token punctuation"
 g<span class="token punctuation">.</span>gen<span class="token punctuation">(</span><span class="token punctuation">)</span>
 m <span class="token operator">=</span> bytes_to_long<span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>解题思路</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># sage</span>
 <span class="token keyword">import</span> itertools
@@ -669,7 +669,6 @@ d <span class="token operator">=</span> <span class="token builtin">pow</span><s
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span><span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>N<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 学长的<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>但是我感觉以那时候的学长应该是解不出来的<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>另一组解</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> itertools
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes
@@ -774,9 +773,10 @@ p<span class="token punctuation">,</span> q <span class="token operator">=</span
 
 应该比较好理解
 等下回来看<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="VNCTF2021-strange-function"><a href="#VNCTF2021-strange-function" class="headerlink" title="[VNCTF2021]strange_function"></a>[VNCTF2021]strange_function</h2><p>先欠着</p>
-<h2 id="NepCTF2021-Real-Base"><a href="#NepCTF2021-Real-Base" class="headerlink" title="[NepCTF2021]Real_Base"></a>[NepCTF2021]Real_Base</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#py2</span>
+<h2 id="vnctf2021strange_function">[VNCTF2021]strange_function</h2>
+<p>先欠着</p>
+<h2 id="nepctf2021real_base">[NepCTF2021]Real_Base</h2>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#py2</span>
 <span class="token keyword">import</span> string
 <span class="token keyword">import</span> random
 <span class="token keyword">from</span> secret <span class="token keyword">import</span> flag<span class="token punctuation">,</span>b_char
@@ -812,7 +812,6 @@ m1<span class="token operator">=</span>random<span class="token punctuation">.</
 <span class="token comment"># rTcb1BR8YVW2EOUjweXpIiLt5QCNg7ZAsD9muq3ylMhvofnx/P</span>
 <span class="token comment"># 2Br9y9fcu97zvB2OruZv0D3Bwhbj0uNQnvfdtC2TwAfPrdBJ3xeP4wNn0hzLzCVUlRa=</span>
 <span class="token comment"># tCvM4R3TzvZ7nhjBxSiNyxmP28e7qCjVxQn91SRM3gBKzxQ=</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">学到了
 <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token string">'0xa'</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">)</span>
 <span class="token number">10</span>
@@ -824,7 +823,6 @@ m1<span class="token operator">=</span>random<span class="token punctuation">.</
 <span class="token string">'0b1010'</span>
 <span class="token operator">>></span><span class="token operator">></span><span class="token builtin">bin</span><span class="token punctuation">(</span><span class="token string">'20'</span><span class="token punctuation">)</span>
 <span class="token string">'0b10100'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>wp</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># c = 'tCvM4R3TzvZ7nhjBxSiNyxmP28e7qCjVxQn91SRM3gBKzxQ='</span>
 <span class="token comment"># bchar = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ+/'</span>
@@ -840,7 +838,6 @@ s <span class="token operator">=</span> <span class="token string">''</span>
     s <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>b<span class="token punctuation">[</span>i<span class="token punctuation">:</span>i<span class="token operator">+</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
 Nep<span class="token punctuation">&#123;</span>Wwe_a4re_b1as3r!!Bby_Ccomptine<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>

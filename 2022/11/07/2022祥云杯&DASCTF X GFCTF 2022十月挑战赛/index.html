@@ -467,7 +467,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="DASCTF-X-GFCTF-2022十月挑战赛"><a href="#DASCTF-X-GFCTF-2022十月挑战赛" class="headerlink" title="DASCTF X GFCTF 2022十月挑战赛"></a>DASCTF X GFCTF 2022十月挑战赛</h1><h3 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+                <h1 id="dasctf-x-gfctf-2022十月挑战赛">DASCTF X GFCTF 2022十月挑战赛</h1>
+<h3 id="rsa">RSA</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> iroot<span class="token punctuation">,</span>invert
 <span class="token keyword">from</span> binascii <span class="token keyword">import</span> hexlify<span class="token punctuation">,</span>unhexlify
 
@@ -500,8 +502,9 @@ m2 <span class="token operator">=</span> long_to_bytes<span class="token punctua
 <span class="token comment"># b'0x666c61677b3230366538353964'</span>
 <span class="token comment"># b'flag&#123;206e859d'</span>
 <span class="token comment"># b'859d8e854c4f600cb12757bbf9f5&#125;'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h1 id="十月刷题记录"><a href="#十月刷题记录" class="headerlink" title="十月刷题记录"></a>十月刷题记录</h1><h3 id="GUET-CTF2019-BabyRSA"><a href="#GUET-CTF2019-BabyRSA" class="headerlink" title="[GUET-CTF2019]BabyRSA"></a>[GUET-CTF2019]BabyRSA</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> sympy
+<h1 id="十月刷题记录">十月刷题记录</h1>
+<h3 id="guet-ctf2019babyrsa">[GUET-CTF2019]BabyRSA</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> sympy
 <span class="token keyword">import</span> gmpy2
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes
 p_q <span class="token operator">=</span> <span class="token number">0x1232fecb92adead91613e7d9ae5e36fe6bb765317d6ed38ad890b4073539a6231a6620584cea5730b5af83a3e80cf30141282c97be4400e33307573af6b25e2ea</span>
@@ -523,8 +526,9 @@ phi <span class="token operator">=</span> <span class="token punctuation">(</spa
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>enc_flag<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
 mm <span class="token operator">=</span> long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>mm<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h1 id="祥云杯"><a href="#祥云杯" class="headerlink" title="祥云杯"></a>祥云杯</h1><h3 id="common-rsa"><a href="#common-rsa" class="headerlink" title="common_rsa"></a>common_rsa</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gmpy2
+<h1 id="祥云杯">祥云杯</h1>
+<h3 id="common_rsa">common_rsa</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gmpy2
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>getPrime<span class="token punctuation">,</span>inverse
 <span class="token keyword">import</span> binascii
 
@@ -538,8 +542,8 @@ d <span class="token operator">=</span> inverse<span class="token punctuation">(
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token comment"># b'flag&#123;9aecf8d8-6966-4ffa-96b0-2e744d28baf2&#125;'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="tracing"><a href="#tracing" class="headerlink" title="tracing"></a>tracing</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+<h3 id="tracing">tracing</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 c <span class="token operator">=</span> <span class="token number">64885875317556090558238994066256805052213864161514435285748891561779867972960805879348109302233463726130814478875296026610171472811894585459078460333131491392347346367422276701128380739598873156279173639691126814411752657279838804780550186863637510445720206103962994087507407296814662270605713097055799853102</span>
 
 n <span class="token operator">=</span> <span class="token number">113793513490894881175568252406666081108916791207947545198428641792768110581083359318482355485724476407204679171578376741972958506284872470096498674038813765700336353715590069074081309886710425934960057225969468061891326946398492194812594219890553185043390915509200930203655022420444027841986189782168065174301</span>
@@ -571,8 +575,9 @@ d<span class="token operator">=</span>inverse<span class="token punctuation">(</
 m<span class="token operator">=</span><span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token string">b'flag&#123;a526344-a8c7-411d-bf53-ef6a2479de1a&#125;'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="little-little-fermat"><a href="#little-little-fermat" class="headerlink" title="little little fermat"></a>little little fermat</h3><h4 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span> 
+<h3 id="little-little-fermat">little little fermat</h3>
+<h4 id="解法一">解法一</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span> 
 <span class="token keyword">from</span> random <span class="token keyword">import</span> <span class="token operator">*</span> 
 <span class="token keyword">from</span> libnum <span class="token keyword">import</span> <span class="token operator">*</span> 
 <span class="token keyword">import</span> gmpy2 
@@ -602,8 +607,8 @@ m<span class="token operator">=</span><span class="token builtin">pow</span><spa
 <span class="token comment">#https://blog.maple3142.net/2022/07/18/cryptoctf-2022-writeups/#sparse</span>
 <span class="token comment">#3. medium-hard </span>
 <span class="token comment">#3.3. Sparse</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gmpy2
+<h4 id="解法二">解法二</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gmpy2
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes<span class="token punctuation">,</span>inverse<span class="token punctuation">,</span>isPrime<span class="token punctuation">,</span>bytes_to_long
 
 n <span class="token operator">=</span> <span class="token number">141321067325716426375483506915224930097246865960474155069040176356860707435540270911081589751471783519639996589589495877214497196498978453005154272785048418715013714419926299248566038773669282170912502161620702945933984680880287757862837880474184004082619880793733517191297469980246315623924571332042031367393</span>
@@ -620,8 +625,8 @@ flag <span class="token operator">=</span> m <span class="token operator">^</spa
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token comment"># print(pow(114514,p-1,p))</span>
 <span class="token comment"># b'flag&#123;I~ju5t_w@nt_30_te11_y0u_how_I_@m_f3ll1ng~&#125;45108#@7++3@79?3328?!!@08#712/+963-60#9-/83#+/1@@=59!/84@?3#4!4=-9542/##'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="babyDLP"><a href="#babyDLP" class="headerlink" title="babyDLP"></a>babyDLP</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Arr3stY0u 脚本</span>
+<h3 id="babydlp">babyDLP</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Arr3stY0u 脚本</span>
 <span class="token comment"># TeamGipsy 脚本</span>
 EDI EDI安全
 
@@ -658,11 +663,11 @@ r<span class="token operator">=</span>remote<span class="token punctuation">(</s
             s<span class="token operator">=</span>s<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">'0'</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
 r<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="leak"><a href="#leak" class="headerlink" title="leak"></a>leak</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># TeamGipsy 脚本</span>
+<h3 id="leak">leak</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># TeamGipsy 脚本</span>
 <span class="token operator">-</span><span class="token operator">></span>https<span class="token punctuation">:</span><span class="token operator">//</span>mp<span class="token punctuation">.</span>weixin<span class="token punctuation">.</span>qq<span class="token punctuation">.</span>com<span class="token operator">/</span>s<span class="token operator">/</span>4JVUFZ<span class="token operator">-</span>pAMqoF8ZxSiolWA<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="fill"><a href="#fill" class="headerlink" title="fill"></a>fill</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#sagemath</span>
+<h3 id="fill">fill</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#sagemath</span>
 <span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">import</span> hashlib
 nbits <span class="token operator">=</span> <span class="token number">32</span>
@@ -705,7 +710,6 @@ x <span class="token operator">=</span> <span class="token string-interpolation"
 <span class="token comment"># 8712091 24</span>
 <span class="token comment"># (1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0)</span>
 <span class="token comment"># flag&#123;fdb9a9c25f1da1edb0f88669b10265b5c229b2c86ee3539a7184b9ff3bf2cfd7&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>
